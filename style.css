@@ -595,3 +595,26 @@ ul{list-style:none}
     right: 16px !important;
   }
 }
+
+/* ── CAROUSEL ARROWS: fix centering + use SVG arrows ── */
+.carousel-btn {
+  line-height: 1 !important;
+
+/* ── CAROUSEL & LIGHTBOX ARROWS: SVG perfectly centered ── */
+.carousel-btn svg,
+.lb-prev svg,
+.lb-next svg {
+  display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+.carousel-btn {
+  line-height: 0 !important;
+  font-size: 0 !important;
+  padding: 0 !important;
+}
+.lb-prev, .lb-next {
+  line-height: 0 !important;
+  font-size: 0 !important;
+  padding: 0 !important;
+}
