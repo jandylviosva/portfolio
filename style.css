@@ -482,3 +482,116 @@ ul{list-style:none}
   .hero-image-mobile { display: flex; flex-direction: column; align-items: center; }
   .hero-image-wrap   { display: none !important; }
 }
+
+/* ── SERVICE CARDS: center aligned ── */
+.service-card {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.service-card h3 { text-align: center; }
+.service-card p  { text-align: center; }
+
+/* ── CAROUSEL ARROWS: transparent bg, subtle, visible on hover ── */
+.carousel-btn {
+  background: transparent !important;
+  color: rgba(27,95,170,0.35) !important;
+  border: 1.5px solid rgba(27,95,170,0.25) !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  transition: color .2s, border-color .2s, background .2s, transform .15s !important;
+}
+.carousel-btn:hover {
+  background: rgba(27,95,170,0.12) !important;
+  color: var(--blue) !important;
+  border-color: var(--blue) !important;
+  transform: scale(1.08) !important;
+}
+
+/* ── CAROUSEL MOBILE: hide arrows, enable touch scroll ── */
+@media (max-width: 700px) {
+  .carousel-btn { display: none !important; }
+  .carousel { padding: 0 !important; }
+
+  /* Make track-wrap natively scrollable by touch */
+  .carousel-track-wrap {
+    overflow-x: scroll !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;          /* Firefox */
+  }
+  .carousel-track-wrap::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+  /* Disable JS-driven transform — native scroll takes over */
+  .carousel-track {
+    transform: none !important;
+    transition: none !important;
+    width: max-content;
+  }
+
+  /* Each slide snaps and fills the viewport */
+  .carousel-slide {
+    min-width: 90vw !important;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+  .carousel-slide img {
+    height: 200px !important;
+    object-fit: cover;
+  }
+}
+
+/* ── LIGHTBOX MOBILE: bigger image, horizontal scroll, no arrows ── */
+@media (max-width: 700px) {
+  .lightbox {
+    padding: 0 !important;
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+  .lb-img-wrap {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    width: 100vw;
+    height: 50vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    scrollbar-width: none;
+    padding: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .lb-img-wrap::-webkit-scrollbar { display: none; }
+  #lb-img {
+    max-width: none !important;
+    max-height: 50vh !important;
+    height: 50vh;
+    width: auto !important;
+    border-radius: 0 !important;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+  .lb-prev, .lb-next { display: none !important; }
+  .lb-counter {
+    position: absolute;
+    bottom: calc(25vh - 24px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,.7);
+    font-size: .85rem;
+    white-space: nowrap;
+  }
+  .lb-close {
+    top: 12px !important;
+    right: 16px !important;
+  }
+}

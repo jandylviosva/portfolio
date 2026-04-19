@@ -100,6 +100,28 @@ function carouselNav(id, dir) {
 ['appt','listing','store'].forEach(id => { buildDots(id); updateCarousel(id); });
 window.addEventListener('resize', () => ['appt','listing','store'].forEach(id => { buildDots(id); updateCarousel(id); }));
 
+// ── Touch/drag swipe for desktop carousel ──
+['appt','listing','store'].forEach(id => {
+  const wrap = document.querySelector('#carousel-' + id + ' .carousel-track-wrap');
+  if (!wrap) return;
+  let startX = 0, isDragging = false;
+  wrap.addEventListener('mousedown',  e => { isDragging = true; startX = e.clientX; });
+  wrap.addEventListener('mousemove',  e => { if (!isDragging) return; e.preventDefault(); });
+  wrap.addEventListener('mouseup',    e => {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.clientX;
+    if (Math.abs(diff) > 40) carouselNav(id, diff > 0 ? 1 : -1);
+  });
+  wrap.addEventListener('mouseleave', () => { isDragging = false; });
+  // touch
+  wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+  wrap.addEventListener('touchend',   e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) carouselNav(id, diff > 0 ? 1 : -1);
+  });
+});
+
 // ============================================================
 // LIGHTBOX  (shared for samples + certs)
 // ============================================================
