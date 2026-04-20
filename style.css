@@ -618,3 +618,17 @@ ul{list-style:none}
   font-size: 0 !important;
   padding: 0 !important;
 }
+
+/* ── CERT LIGHTBOX: full width, height auto ── */
+.lightbox.cert-open .lb-img-wrap {
+  max-width: min(95vw, 800px);
+  max-height: 90vh;
+  width: min(95vw, 800px);
+}
+.lightbox.cert-open #lb-img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--r-md);
+}

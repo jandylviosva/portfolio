@@ -1,576 +1,1351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JV Ecom VA | Jandyl Vios – Shopify Virtual Assistant</title>
-  <meta name="description" content="Jandyl Vios – Shopify-focused Virtual Assistant from the Philippines."/>
-  <link rel="icon" href="assets/jvecomva-favicon.png" type="image/png"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JV Ecom VA | Jandyl Vios – Shopify Virtual Assistant</title>
+    <meta
+      name="description"
+      content="Jandyl Vios – Shopify-focused Virtual Assistant from the Philippines."
+    />
+    <link rel="icon" href="assets/jvecomva-favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAV: logo only, no text -->
+    <nav id="navbar">
+      <a href="#" class="nav-logo">
+        <img src="assets/mylogo.png" alt="JV Ecom VA" class="nav-logo-img" />
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#services-offered">Services</a></li>
+        <li><a href="#sample-works">Samples</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a
+            href=""
+            class="nav-cta"
+            onclick="
+              Calendly.initPopupWidget({
+                url: 'https://calendly.com/jvecomva/30min',
+              });
+              return false;
+            "
+            >Hire Me</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-  <!-- NAV: logo only, no text -->
-  <nav id="navbar">
-    <a href="#" class="nav-logo">
-      <img src="assets/mylogo.png" alt="JV Ecom VA" class="nav-logo-img"/>
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about-me">About Me</a></li>
-      <li><a href="#services-offered">Services</a></li>
-      <li><a href="#sample-works">Samples</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jvecomva/30min'});return false;">Hire Me</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Shopify Virtual Assistant</p>
-      <h1 class="hero-name">Jandyl<br/><em>Vios</em></h1>
-      <p class="hero-tagline">Your Shopify Operations Partner</p>
-      <p class="hero-sub">I Handle Your Store So You Can Scale Faster</p>
-      <p class="hero-desc">I specialize in Shopify product listing, store optimization, and store management so you can focus on marketing and growth.</p>
-      <!-- Mobile-only image shown above buttons -->
-      <div class="hero-image-mobile">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Shopify Virtual Assistant</p>
+        <h1 class="hero-name">Jandyl<br /><em>Vios</em></h1>
+        <p class="hero-tagline">Your Shopify Operations Partner</p>
+        <p class="hero-sub">I Handle Your Store So You Can Scale Faster</p>
+        <p class="hero-desc">
+          I specialize in Shopify product listing, store optimization, and store
+          management so you can focus on marketing and growth.
+        </p>
+        <!-- Mobile-only image shown above buttons -->
+        <div class="hero-image-mobile">
+          <div class="hero-img-frame">
+            <img
+              src="assets/profile.jpg"
+              alt="Jandyl Vios"
+              class="hero-photo"
+              onerror="
+                this.style.display = 'none';
+                this.parentElement.classList.add('no-photo');
+              "
+            />
+            <div class="hero-img-placeholder">JV</div>
+          </div>
+          <div class="hero-badge">
+            <span class="badge-icon">✦</span> Available for Work
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a
+            href=""
+            class="btn btn-primary"
+            onclick="
+              Calendly.initPopupWidget({
+                url: 'https://calendly.com/jvecomva/30min',
+              });
+              return false;
+            "
+            >Book a Free Discovery Call</a
+          >
+          <a href="#services-offered" class="btn btn-outline"
+            >See My Services</a
+          >
+        </div>
+      </div>
+      <div class="hero-image-wrap">
         <div class="hero-img-frame">
-          <img src="assets/profile.jpg" alt="Jandyl Vios" class="hero-photo" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"/>
+          <img
+            src="assets/profile.jpg"
+            alt="Jandyl Vios"
+            class="hero-photo"
+            onerror="
+              this.style.display = 'none';
+              this.parentElement.classList.add('no-photo');
+            "
+          />
           <div class="hero-img-placeholder">JV</div>
         </div>
-        <div class="hero-badge"><span class="badge-icon">✦</span> Available for Work</div>
-      </div>
-      <div class="hero-actions">
-        <a href="" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jvecomva/30min'});return false;">Book a Free Discovery Call</a>
-        <a href="#services-offered" class="btn btn-outline">See My Services</a>
-      </div>
-    </div>
-    <div class="hero-image-wrap">
-      <div class="hero-img-frame">
-        <img src="assets/profile.jpg" alt="Jandyl Vios" class="hero-photo" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')"/>
-        <div class="hero-img-placeholder">JV</div>
-      </div>
-      <div class="hero-badge"><span class="badge-icon">✦</span> Available for Work</div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section section-dark" id="about-me">
-    <div class="container">
-      <div class="section-label light">About Me</div>
-      <div class="about-grid">
-        <div class="about-text">
-          <h2>Hi, I'm <em>Jandyl</em></h2>
-          <p>I am a Shopify-focused Virtual Assistant from the Philippines with experience in Product Listing, PDP building, POD Design, Theme Customization, and E-commerce Support.</p>
-          <p>I help business owners build, clean, and optimize their stores. I make product uploads easier, improve store layout, connect apps, and assist with store operations — so you can focus on sales while I handle the backend.</p>
-          <a href="#contact" class="btn btn-primary">Let's Connect!</a>
+        <div class="hero-badge">
+          <span class="badge-icon">✦</span> Available for Work
         </div>
-        <div class="about-side">
-          <div class="info-card">
-            <div class="info-card-header">Education</div>
-            <div class="info-card-body info-card-row">
-              <a href="https://www.carsu.edu.ph/" target="_blank" class="info-logo-link">
-                <img src="assets/logos/logo-csu.svg" alt="Caraga State University"/>
-              </a>
-              <div class="info-card-text">
-                <p class="info-title"><strong>Bachelor of Science in Information Technology (BSIT)</strong></p>
-                <p class="info-sub">Caraga State University <span>2023</span></p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-dark" id="about-me">
+      <div class="container">
+        <div class="section-label light">About Me</div>
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>Hi, I'm <em>Jandyl</em></h2>
+            <p>
+              I am a Shopify-focused Virtual Assistant from the Philippines with
+              experience in Product Listing, PDP building, POD Design, Theme
+              Customization, and E-commerce Support.
+            </p>
+            <p>
+              I help business owners build, clean, and optimize their stores. I
+              make product uploads easier, improve store layout, connect apps,
+              and assist with store operations — so you can focus on sales while
+              I handle the backend.
+            </p>
+            <a href="#contact" class="btn btn-primary">Let's Connect!</a>
+          </div>
+          <div class="about-side">
+            <div class="info-card">
+              <div class="info-card-header">Education</div>
+              <div class="info-card-body info-card-row">
+                <a
+                  href="https://www.carsu.edu.ph/"
+                  target="_blank"
+                  class="info-logo-link"
+                >
+                  <img
+                    src="assets/logos/logo-csu.svg"
+                    alt="Caraga State University"
+                  />
+                </a>
+                <div class="info-card-text">
+                  <p class="info-title">
+                    <strong
+                      >Bachelor of Science in Information Technology
+                      (BSIT)</strong
+                    >
+                  </p>
+                  <p class="info-sub">
+                    Caraga State University <span>2023</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header">Training</div>
+              <div class="info-card-body info-card-row">
+                <a
+                  href="https://yourvabuddy.com/"
+                  target="_blank"
+                  class="info-logo-link"
+                >
+                  <img
+                    src="assets/logos/logo-yourvabuddy.png"
+                    alt="Your VA Buddy"
+                  />
+                </a>
+                <div class="info-card-text">
+                  <p class="info-title">
+                    <strong
+                      >Shopify Store Management: Master the #1 E-Commerce
+                      Platform</strong
+                    >
+                  </p>
+                  <p class="info-sub">
+                    Your VA Buddy: Expert VA Training <span>2024</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="info-card">
-            <div class="info-card-header">Training</div>
-            <div class="info-card-body info-card-row">
-              <a href="https://yourvabuddy.com/" target="_blank" class="info-logo-link">
-                <img src="assets/logos/logo-yourvabuddy.png" alt="Your VA Buddy"/>
-              </a>
-              <div class="info-card-text">
-                <p class="info-title"><strong>Shopify Store Management: Master the #1 E-Commerce Platform</strong></p>
-                <p class="info-sub">Your VA Buddy: Expert VA Training <span>2024</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE (timeline — kept same, abbreviated for space) -->
+    <section class="section section-dark" id="experience">
+      <div class="container">
+        <div class="section-label light">Experience</div>
+        <h2 class="section-title light">Work Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">March 2026 – Present</span
+                ><span class="timeline-type">Part-time</span>
+              </div>
+              <div class="timeline-logo">
+                <img
+                  src="assets/logos/logo-cultivator.png"
+                  alt="The Cultivator"
+                />
+              </div>
+              <h3>Account Manager</h3>
+              <p class="timeline-company">
+                The Cultivator ·
+                <a href="http://thecultivator.co" target="_blank"
+                  >thecultivator.co</a
+                >
+              </p>
+              <p>
+                Communicating with clients, delegating tasks, reviewing output
+                before submission, and supporting team members with daily
+                issues.
+              </p>
+              <div class="tools-tags">
+                <span>Cultivator Portal</span><span>Shopify Partners</span
+                ><span>Shopify Admin</span><span>Klaviyo</span><span>Canva</span
+                ><span>Squarespace</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">January 2026 – Present</span
+                ><span class="timeline-type">Part-time</span>
+              </div>
+              <div class="timeline-logo">
+                <img src="assets/logos/logo-laspalmas.png" alt="Las Palmas" />
+              </div>
+              <h3>Shopify Store Localizer | Funnel Builder</h3>
+              <p class="timeline-company">
+                Las Palmas ·
+                <a href="http://ardenix.co.za" target="_blank">ardenix.co.za</a>
+              </p>
+              <p>
+                Task tracking via ClickUp, translating store content with
+                ChatGPT, uploading validated reviews using Loox.
+              </p>
+              <div class="tools-tags">
+                <span>Shopify Admin</span><span>ClickUp</span
+                ><span>Google Sheets</span><span>ChatGPT</span
+                ><span>Loox Reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">November 2024 – Present</span
+                ><span class="timeline-type">Part-time</span>
+              </div>
+              <div class="timeline-logo">
+                <img
+                  src="assets/logos/logo-directmobility.webp"
+                  alt="Direct Mobility USA"
+                />
+              </div>
+              <h3>Image Editing / Product Page Optimizer</h3>
+              <p class="timeline-company">
+                Direct Mobility USA ·
+                <a href="https://directmobilityusa.com/" target="_blank"
+                  >directmobilityusa.com</a
+                >
+              </p>
+              <p>
+                Product uploads, image enhancement, and product page
+                optimization with custom Liquid code.
+              </p>
+              <div class="tools-tags">
+                <span>Shopify Theme Editor</span><span>Shopify Liquid</span
+                ><span>Canva</span><span>Adobe Photoshop</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">June 2025 – January 2026</span
+                ><span class="timeline-type">Part-time</span>
+              </div>
+              <div class="timeline-logo">
+                <img src="assets/logos/logo-faiz.png" alt="FAIZ Products" />
+              </div>
+              <h3>Shopify PDP Builder | Product Lister</h3>
+              <p class="timeline-company">
+                FAIZ Products ·
+                <a href="http://verinelle.com" target="_blank">verinelle.com</a>
+              </p>
+              <p>
+                Managing PDP workflow via Trello, verifying product details, and
+                creating optimized Shopify product pages.
+              </p>
+              <div class="tools-tags">
+                <span>Shopify Admin</span><span>Trello</span
+                ><span>Google Sheets</span><span>Canva</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">December 2025</span
+                ><span class="timeline-type">Part-time</span>
+              </div>
+              <div class="timeline-logo">
+                <img
+                  src="assets/logos/logo-loyaltee.png"
+                  alt="LoyalTee Prints"
+                />
+              </div>
+              <h3>Product Designer | Operations Assistant</h3>
+              <p class="timeline-company">
+                LoyalTee Prints ·
+                <a href="http://www.loyalteeprints.com" target="_blank"
+                  >loyalteeprints.com</a
+                >
+              </p>
+              <p>
+                Designing dog-themed products, assisting with order fulfillment,
+                website updates, and SEO.
+              </p>
+              <div class="tools-tags">
+                <span>Shopify</span><span>Printful</span><span>Midjourney</span
+                ><span>Canva</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">October – November 2025</span
+                ><span class="timeline-type">Gig</span>
+              </div>
+              <div class="timeline-logo">
+                <img src="assets/logos/logo-chewziez.png" alt="Chewziez" />
+              </div>
+              <h3>Shopify Theme Customization</h3>
+              <p class="timeline-company">
+                Chewziez ·
+                <a href="http://chewziez.com" target="_blank">chewziez.com</a>
+              </p>
+              <p>
+                Theme Editor and Liquid customization, subscription page
+                optimization, responsive design.
+              </p>
+              <div class="tools-tags">
+                <span>Shopify Theme Editor</span><span>Liquid Editor</span
+                ><span>Recharge App</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-date">April 2023 – May 2025</span
+                ><span class="timeline-type">Full-time</span>
+              </div>
+              <div class="timeline-logo">
+                <img src="assets/logos/logo-choicez.png" alt="Choicez Media" />
+              </div>
+              <h3>Data Entry Specialist &amp; Appointment Scheduler</h3>
+              <p class="timeline-company">
+                Choicez Media ·
+                <a href="http://www.choicez.com.au" target="_blank"
+                  >choicez.com.au</a
+                >
+              </p>
+              <p>
+                Appointments, client communications, invoicing with Xero, email
+                outreach, and podcast booking.
+              </p>
+              <div class="tools-tags">
+                <span>Google Workspace</span><span>Xero</span><span>Slack</span
+                ><span>Calendly</span><span>Zoom</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERIENCE (timeline — kept same, abbreviated for space) -->
-  <section class="section section-dark" id="experience">
-    <div class="container">
-      <div class="section-label light">Experience</div>
-      <h2 class="section-title light">Work Experience</h2>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">March 2026 – Present</span><span class="timeline-type">Part-time</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-cultivator.png" alt="The Cultivator"/></div>
-            <h3>Account Manager</h3>
-            <p class="timeline-company">The Cultivator · <a href="http://thecultivator.co" target="_blank">thecultivator.co</a></p>
-            <p>Communicating with clients, delegating tasks, reviewing output before submission, and supporting team members with daily issues.</p>
-            <div class="tools-tags"><span>Cultivator Portal</span><span>Shopify Partners</span><span>Shopify Admin</span><span>Klaviyo</span><span>Canva</span><span>Squarespace</span></div>
+    <!-- SERVICES — GIF icons -->
+    <section class="section" id="services-offered">
+      <div class="container">
+        <div class="section-label">What I Do</div>
+        <h2 class="section-title">Services Offered</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="assets/gifs/icon-setup.gif" alt="" class="service-gif" />
+            <h3>Shopify Store Setup</h3>
+            <p>
+              Full store setup from scratch — domain connection, theme
+              installation, homepage, navigation, and basic SEO.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">January 2026 – Present</span><span class="timeline-type">Part-time</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-laspalmas.png" alt="Las Palmas"/></div>
-            <h3>Shopify Store Localizer | Funnel Builder</h3>
-            <p class="timeline-company">Las Palmas · <a href="http://ardenix.co.za" target="_blank">ardenix.co.za</a></p>
-            <p>Task tracking via ClickUp, translating store content with ChatGPT, uploading validated reviews using Loox.</p>
-            <div class="tools-tags"><span>Shopify Admin</span><span>ClickUp</span><span>Google Sheets</span><span>ChatGPT</span><span>Loox Reviews</span></div>
+          <div class="service-card">
+            <img src="assets/gifs/icon-pdp.gif" alt="" class="service-gif" />
+            <h3>Product Listing &amp; PDP Building</h3>
+            <p>
+              Optimized product pages that meet brand standards, boost
+              usability, and drive conversions.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">November 2024 – Present</span><span class="timeline-type">Part-time</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-directmobility.webp" alt="Direct Mobility USA"/></div>
-            <h3>Image Editing / Product Page Optimizer</h3>
-            <p class="timeline-company">Direct Mobility USA · <a href="https://directmobilityusa.com/" target="_blank">directmobilityusa.com</a></p>
-            <p>Product uploads, image enhancement, and product page optimization with custom Liquid code.</p>
-            <div class="tools-tags"><span>Shopify Theme Editor</span><span>Shopify Liquid</span><span>Canva</span><span>Adobe Photoshop</span></div>
+          <div class="service-card">
+            <img src="assets/gifs/icon-order.gif" alt="" class="service-gif" />
+            <h3>Order Processing &amp; Fulfillment</h3>
+            <p>
+              End-to-end order management, inventory tracking, and fulfillment
+              coordination.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">June 2025 – January 2026</span><span class="timeline-type">Part-time</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-faiz.png" alt="FAIZ Products"/></div>
-            <h3>Shopify PDP Builder | Product Lister</h3>
-            <p class="timeline-company">FAIZ Products · <a href="http://verinelle.com" target="_blank">verinelle.com</a></p>
-            <p>Managing PDP workflow via Trello, verifying product details, and creating optimized Shopify product pages.</p>
-            <div class="tools-tags"><span>Shopify Admin</span><span>Trello</span><span>Google Sheets</span><span>Canva</span></div>
+          <div class="service-card">
+            <img
+              src="assets/gifs/icon-support.gif"
+              alt=""
+              class="service-gif"
+            />
+            <h3>Customer Chat/Email Support</h3>
+            <p>
+              Professional, responsive customer support via email or live chat
+              platforms.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">December 2025</span><span class="timeline-type">Part-time</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-loyaltee.png" alt="LoyalTee Prints"/></div>
-            <h3>Product Designer | Operations Assistant</h3>
-            <p class="timeline-company">LoyalTee Prints · <a href="http://www.loyalteeprints.com" target="_blank">loyalteeprints.com</a></p>
-            <p>Designing dog-themed products, assisting with order fulfillment, website updates, and SEO.</p>
-            <div class="tools-tags"><span>Shopify</span><span>Printful</span><span>Midjourney</span><span>Canva</span></div>
+          <div class="service-card">
+            <img src="assets/gifs/icon-theme.gif" alt="" class="service-gif" />
+            <h3>Theme Customization</h3>
+            <p>
+              Custom Shopify theme edits using the Theme Editor and Liquid to
+              match your brand perfectly.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">October – November 2025</span><span class="timeline-type">Gig</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-chewziez.png" alt="Chewziez"/></div>
-            <h3>Shopify Theme Customization</h3>
-            <p class="timeline-company">Chewziez · <a href="http://chewziez.com" target="_blank">chewziez.com</a></p>
-            <p>Theme Editor and Liquid customization, subscription page optimization, responsive design.</p>
-            <div class="tools-tags"><span>Shopify Theme Editor</span><span>Liquid Editor</span><span>Recharge App</span></div>
+          <div class="service-card">
+            <img
+              src="assets/gifs/icon-localize.gif"
+              alt=""
+              class="service-gif"
+            />
+            <h3>Store Localization</h3>
+            <p>
+              Translate and adapt your store content for international markets
+              with accuracy and consistency.
+            </p>
           </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-meta"><span class="timeline-date">April 2023 – May 2025</span><span class="timeline-type">Full-time</span></div>
-            <div class="timeline-logo"><img src="assets/logos/logo-choicez.png" alt="Choicez Media"/></div>
-            <h3>Data Entry Specialist &amp; Appointment Scheduler</h3>
-            <p class="timeline-company">Choicez Media · <a href="http://www.choicez.com.au" target="_blank">choicez.com.au</a></p>
-            <p>Appointments, client communications, invoicing with Xero, email outreach, and podcast booking.</p>
-            <div class="tools-tags"><span>Google Workspace</span><span>Xero</span><span>Slack</span><span>Calendly</span><span>Zoom</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES — GIF icons -->
-  <section class="section" id="services-offered">
-    <div class="container">
-      <div class="section-label">What I Do</div>
-      <h2 class="section-title">Services Offered</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="assets/gifs/icon-setup.gif" alt="" class="service-gif"/>
-          <h3>Shopify Store Setup</h3>
-          <p>Full store setup from scratch — domain connection, theme installation, homepage, navigation, and basic SEO.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/gifs/icon-pdp.gif" alt="" class="service-gif"/>
-          <h3>Product Listing &amp; PDP Building</h3>
-          <p>Optimized product pages that meet brand standards, boost usability, and drive conversions.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/gifs/icon-order.gif" alt="" class="service-gif"/>
-          <h3>Order Processing &amp; Fulfillment</h3>
-          <p>End-to-end order management, inventory tracking, and fulfillment coordination.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/gifs/icon-support.gif" alt="" class="service-gif"/>
-          <h3>Customer Chat/Email Support</h3>
-          <p>Professional, responsive customer support via email or live chat platforms.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/gifs/icon-theme.gif" alt="" class="service-gif"/>
-          <h3>Theme Customization</h3>
-          <p>Custom Shopify theme edits using the Theme Editor and Liquid to match your brand perfectly.</p>
-        </div>
-        <div class="service-card">
-          <img src="assets/gifs/icon-localize.gif" alt="" class="service-gif"/>
-          <h3>Store Localization</h3>
-          <p>Translate and adapt your store content for international markets with accuracy and consistency.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TOOLS — 2 rows, opposite directions -->
-  <section class="section section-muted" id="skills">
-    <div class="container">
-      <div class="section-label">Toolkit</div>
-      <h2 class="section-title">Tools I Use</h2>
-    </div>
-    <!-- Row 1: left → right (AI & Design tools) -->
-    <div class="tools-ticker-wrap">
-      <div class="tools-ticker ticker-forward">
-        <div class="tool-chip"><img src="assets/logos/tool-shopify.png" alt=""/>Shopify Admin</div>
-        <div class="tool-chip"><img src="assets/logos/tool-chatgpt.png" alt=""/>ChatGPT</div>
-        <div class="tool-chip"><img src="assets/logos/tool-gemini.png" alt=""/>Gemini</div>
-        <div class="tool-chip"><img src="assets/logos/tool-midjourney.png" alt=""/>Midjourney</div>
-        <div class="tool-chip"><img src="assets/logos/tool-canva.png" alt=""/>Canva</div>
-        <div class="tool-chip"><img src="assets/logos/tool-photoshop.png" alt=""/>Photoshop</div>
-        <div class="tool-chip"><img src="assets/logos/tool-googleworkspace.png" alt=""/>Google Workspace</div>
-        <div class="tool-chip"><img src="assets/logos/tool-office.png" alt=""/>MS Office</div>
-        <div class="tool-chip"><img src="assets/logos/tool-claude.webp" alt=""/>Claude AI</div>
-        <div class="tool-chip"><img src="assets/logos/tool-klaviyo.png" alt=""/>Klaviyo</div>
-        <!-- duplicate -->
-        <div class="tool-chip"><img src="assets/logos/tool-shopify.png" alt=""/>Shopify Admin</div>
-        <div class="tool-chip"><img src="assets/logos/tool-chatgpt.png" alt=""/>ChatGPT</div>
-        <div class="tool-chip"><img src="assets/logos/tool-gemini.png" alt=""/>Gemini</div>
-        <div class="tool-chip"><img src="assets/logos/tool-midjourney.png" alt=""/>Midjourney</div>
-        <div class="tool-chip"><img src="assets/logos/tool-canva.png" alt=""/>Canva</div>
-        <div class="tool-chip"><img src="assets/logos/tool-photoshop.png" alt=""/>Photoshop</div>
-        <div class="tool-chip"><img src="assets/logos/tool-googleworkspace.png" alt=""/>Google Workspace</div>
-        <div class="tool-chip"><img src="assets/logos/tool-office.png" alt=""/>MS Office</div>
-        <div class="tool-chip"><img src="assets/logos/tool-claude.webp" alt=""/>Claude AI</div>
-        <div class="tool-chip"><img src="assets/logos/tool-klaviyo.png" alt=""/>Klaviyo</div>
+    <!-- TOOLS — 2 rows, opposite directions -->
+    <section class="section section-muted" id="skills">
+      <div class="container">
+        <div class="section-label">Toolkit</div>
+        <h2 class="section-title">Tools I Use</h2>
       </div>
-    </div>
-    <!-- Row 2: right → left (Comms & Ops tools) -->
-    <div class="tools-ticker-wrap" style="margin-top:14px">
-      <div class="tools-ticker ticker-reverse">
-        <div class="tool-chip"><img src="assets/logos/tool-trello.png" alt=""/>Trello</div>
-        <div class="tool-chip"><img src="assets/logos/tool-clickup.png" alt=""/>ClickUp</div>
-        <div class="tool-chip"><img src="assets/logos/tool-slack.png" alt=""/>Slack</div>
-        <div class="tool-chip"><img src="assets/logos/tool-discord.png" alt=""/>Discord</div>
-        <div class="tool-chip"><img src="assets/logos/tool-whatsapp.png" alt=""/>WhatsApp</div>
-        <div class="tool-chip"><img src="assets/logos/tool-loox.png" alt=""/>Loox Reviews</div>
-        <div class="tool-chip"><img src="assets/logos/tool-recharge.png" alt=""/>Recharge App</div>
-        <div class="tool-chip"><img src="assets/logos/tool-gorgias.png" alt=""/>Gorgias</div>
-        <div class="tool-chip"><img src="assets/logos/tool-systeme.webp" alt=""/>Systeme.io</div>
-        <div class="tool-chip"><img src="assets/logos/tool-xero.webp" alt=""/>Xero</div>
-        <!-- duplicate -->
-        <div class="tool-chip"><img src="assets/logos/tool-trello.png" alt=""/>Trello</div>
-        <div class="tool-chip"><img src="assets/logos/tool-clickup.png" alt=""/>ClickUp</div>
-        <div class="tool-chip"><img src="assets/logos/tool-slack.png" alt=""/>Slack</div>
-        <div class="tool-chip"><img src="assets/logos/tool-discord.png" alt=""/>Discord</div>
-        <div class="tool-chip"><img src="assets/logos/tool-whatsapp.png" alt=""/>WhatsApp</div>
-        <div class="tool-chip"><img src="assets/logos/tool-loox.png" alt=""/>Loox Reviews</div>
-        <div class="tool-chip"><img src="assets/logos/tool-recharge.png" alt=""/>Recharge App</div>
-        <div class="tool-chip"><img src="assets/logos/tool-gorgias.png" alt=""/>Gorgias</div>
-        <div class="tool-chip"><img src="assets/logos/tool-systeme.webp" alt=""/>Systeme.io</div>
-        <div class="tool-chip"><img src="assets/logos/tool-xero.webp" alt=""/>Xero</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY HIRE ME -->
-  <section class="section" id="why-me">
-    <div class="container">
-      <div class="section-label">Value Proposition</div>
-      <h2 class="section-title">Why Hire Me as Your Shopify VA?</h2>
-      <div class="why-grid">
-        <div class="why-card"><span class="why-num">01</span><p>Save <strong>20–40 hours per week</strong> by outsourcing Shopify tasks</p></div>
-        <div class="why-card"><span class="why-num">02</span><p>Avoid <strong>costly store errors</strong> and messy product pages</p></div>
-        <div class="why-card"><span class="why-num">03</span><p>Improve <strong>conversion rates</strong> with optimized product pages</p></div>
-        <div class="why-card"><span class="why-num">04</span><p>Professional, reliable, <strong>detail-oriented IT graduate</strong></p></div>
-        <div class="why-card"><span class="why-num">05</span><p>Familiar with <strong>SOPs and structured workflows</strong></p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKAGES -->
-  <section class="section section-dark" id="packages">
-    <div class="container">
-      <div class="section-label light">Pricing</div>
-      <h2 class="section-title light">Service Packages</h2>
-      <div class="packages-grid">
-        <div class="package-card">
-          <div class="package-badge">Starter</div>
-          <h3>Shopify Store Setup</h3>
-          <p class="package-sub">Ideal for new entrepreneurs launching Shopify</p>
-          <ul>
-            <li>Store setup &amp; domain connection</li>
-            <li>Theme installation &amp; customization</li>
-            <li>Homepage and navigation setup</li>
-            <li>Upload up to 20 products</li>
-            <li>Basic SEO setup</li>
-          </ul>
-          <div class="package-price">Starting at $400 or hourly rate</div>
-          <a href="" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jvecomva/30min'});return false;">Get Started</a>
-        </div>
-        <div class="package-card package-featured">
-          <div class="package-badge">Growth</div>
-          <h3>Store Management</h3>
-          <p class="package-sub">For store owners who want daily ops handled</p>
-          <ul>
-            <li>Product uploads and optimization</li>
-            <li>Order processing &amp; fulfillment</li>
-            <li>Customer support (email/chat)</li>
-            <li>Inventory management</li>
-            <li>Shopify apps integration</li>
-          </ul>
-          <div class="package-price">Monthly retainer available</div>
-          <a href="" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jvecomva/30min'});return false;">Let's Talk</a>
+      <!-- Row 1: left → right (AI & Design tools) -->
+      <div class="tools-ticker-wrap">
+        <div class="tools-ticker ticker-forward">
+          <div class="tool-chip">
+            <img src="assets/logos/tool-shopify.png" alt="" />Shopify Admin
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-chatgpt.png" alt="" />ChatGPT
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-gemini.png" alt="" />Gemini
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-midjourney.png" alt="" />Midjourney
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-canva.png" alt="" />Canva
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-photoshop.png" alt="" />Photoshop
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-googleworkspace.png" alt="" />Google
+            Workspace
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-office.png" alt="" />MS Office
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-claude.webp" alt="" />Claude AI
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-klaviyo.png" alt="" />Klaviyo
+          </div>
+          <!-- duplicate -->
+          <div class="tool-chip">
+            <img src="assets/logos/tool-shopify.png" alt="" />Shopify Admin
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-chatgpt.png" alt="" />ChatGPT
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-gemini.png" alt="" />Gemini
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-midjourney.png" alt="" />Midjourney
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-canva.png" alt="" />Canva
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-photoshop.png" alt="" />Photoshop
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-googleworkspace.png" alt="" />Google
+            Workspace
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-office.png" alt="" />MS Office
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-claude.webp" alt="" />Claude AI
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-klaviyo.png" alt="" />Klaviyo
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+      <!-- Row 2: right → left (Comms & Ops tools) -->
+      <div class="tools-ticker-wrap" style="margin-top: 14px">
+        <div class="tools-ticker ticker-reverse">
+          <div class="tool-chip">
+            <img src="assets/logos/tool-trello.png" alt="" />Trello
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-clickup.png" alt="" />ClickUp
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-slack.png" alt="" />Slack
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-discord.png" alt="" />Discord
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-whatsapp.png" alt="" />WhatsApp
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-loox.png" alt="" />Loox Reviews
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-recharge.png" alt="" />Recharge App
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-gorgias.png" alt="" />Gorgias
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-systeme.webp" alt="" />Systeme.io
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-xero.webp" alt="" />Xero
+          </div>
+          <!-- duplicate -->
+          <div class="tool-chip">
+            <img src="assets/logos/tool-trello.png" alt="" />Trello
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-clickup.png" alt="" />ClickUp
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-slack.png" alt="" />Slack
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-discord.png" alt="" />Discord
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-whatsapp.png" alt="" />WhatsApp
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-loox.png" alt="" />Loox Reviews
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-recharge.png" alt="" />Recharge App
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-gorgias.png" alt="" />Gorgias
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-systeme.webp" alt="" />Systeme.io
+          </div>
+          <div class="tool-chip">
+            <img src="assets/logos/tool-xero.webp" alt="" />Xero
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- SAMPLE WORKS — carousels -->
-  <section class="section" id="sample-works">
-    <div class="container">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title">Sample Works</h2>
+    <!-- WHY HIRE ME -->
+    <section class="section" id="why-me">
+      <div class="container">
+        <div class="section-label">Value Proposition</div>
+        <h2 class="section-title">Why Hire Me as Your Shopify VA?</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="why-num">01</span>
+            <p>
+              Save <strong>20–40 hours per week</strong> by outsourcing Shopify
+              tasks
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">02</span>
+            <p>
+              Avoid <strong>costly store errors</strong> and messy product pages
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">03</span>
+            <p>
+              Improve <strong>conversion rates</strong> with optimized product
+              pages
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">04</span>
+            <p>
+              Professional, reliable,
+              <strong>detail-oriented IT graduate</strong>
+            </p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">05</span>
+            <p>Familiar with <strong>SOPs and structured workflows</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="samples-category">
-        <h4 class="samples-cat-title">Appointment Scheduling &amp; Email Support</h4>
-        <div class="carousel" id="carousel-appt">
-          <button class="carousel-btn carousel-prev" onclick="carouselNav('appt',-1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <div class="carousel-track-wrap">
-            <div class="carousel-track">
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-1.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',0)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-2.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',1)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-3.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',2)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-4.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',3)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-5.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',4)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-6.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',5)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-7.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',6)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/appt/appt-8.png" alt="Appt" loading="lazy" onclick="openLightbox('appt',7)"/></div>
+    <!-- PACKAGES -->
+    <section class="section section-dark" id="packages">
+      <div class="container">
+        <div class="section-label light">Pricing</div>
+        <h2 class="section-title light">Service Packages</h2>
+        <div class="packages-grid">
+          <div class="package-card">
+            <div class="package-badge">Starter</div>
+            <h3>Shopify Store Setup</h3>
+            <p class="package-sub">
+              Ideal for new entrepreneurs launching Shopify
+            </p>
+            <ul>
+              <li>Store setup &amp; domain connection</li>
+              <li>Theme installation &amp; customization</li>
+              <li>Homepage and navigation setup</li>
+              <li>Upload up to 20 products</li>
+              <li>Basic SEO setup</li>
+            </ul>
+            <div class="package-price">Starting at $400 or hourly rate</div>
+            <a
+              href=""
+              class="btn btn-primary"
+              onclick="
+                Calendly.initPopupWidget({
+                  url: 'https://calendly.com/jvecomva/30min',
+                });
+                return false;
+              "
+              >Get Started</a
+            >
+          </div>
+          <div class="package-card package-featured">
+            <div class="package-badge">Growth</div>
+            <h3>Store Management</h3>
+            <p class="package-sub">
+              For store owners who want daily ops handled
+            </p>
+            <ul>
+              <li>Product uploads and optimization</li>
+              <li>Order processing &amp; fulfillment</li>
+              <li>Customer support (email/chat)</li>
+              <li>Inventory management</li>
+              <li>Shopify apps integration</li>
+            </ul>
+            <div class="package-price">Monthly retainer available</div>
+            <a
+              href=""
+              class="btn btn-primary"
+              onclick="
+                Calendly.initPopupWidget({
+                  url: 'https://calendly.com/jvecomva/30min',
+                });
+                return false;
+              "
+              >Let's Talk</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE WORKS — carousels -->
+    <section class="section" id="sample-works">
+      <div class="container">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Sample Works</h2>
+
+        <div class="samples-category">
+          <h4 class="samples-cat-title">
+            Appointment Scheduling &amp; Email Support
+          </h4>
+          <div class="carousel" id="carousel-appt">
+            <button
+              class="carousel-btn carousel-prev"
+              onclick="carouselNav('appt', -1)"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div class="carousel-track-wrap">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-1.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 0)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-2.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 1)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-3.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 2)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-4.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 3)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-5.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 4)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-6.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 5)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-7.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 6)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/appt/appt-8.png"
+                    alt="Appt"
+                    loading="lazy"
+                    onclick="openLightbox('appt', 7)"
+                  />
+                </div>
+              </div>
             </div>
+            <button
+              class="carousel-btn carousel-next"
+              onclick="carouselNav('appt', 1)"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="carousel-dots" id="dots-appt"></div>
           </div>
-          <button class="carousel-btn carousel-next" onclick="carouselNav('appt',1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <div class="carousel-dots" id="dots-appt"></div>
         </div>
-      </div>
 
-      <div class="samples-category">
-        <h4 class="samples-cat-title">Product Listing &amp; Product Designing</h4>
-        <div class="carousel" id="carousel-listing">
-          <button class="carousel-btn carousel-prev" onclick="carouselNav('listing',-1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <div class="carousel-track-wrap">
-            <div class="carousel-track">
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-1.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',0)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-2.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',1)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-3.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',2)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-4.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',3)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-5.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',4)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-6.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',5)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-7.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',6)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-8.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',7)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-9.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',8)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/listing/listing-10.png" alt="Listing" loading="lazy" onclick="openLightbox('listing',9)"/></div>
+        <div class="samples-category">
+          <h4 class="samples-cat-title">
+            Product Listing &amp; Product Designing
+          </h4>
+          <div class="carousel" id="carousel-listing">
+            <button
+              class="carousel-btn carousel-prev"
+              onclick="carouselNav('listing', -1)"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div class="carousel-track-wrap">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-1.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 0)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-2.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 1)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-3.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 2)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-4.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 3)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-5.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 4)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-6.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 5)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-7.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 6)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-8.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 7)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-9.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 8)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/listing/listing-10.png"
+                    alt="Listing"
+                    loading="lazy"
+                    onclick="openLightbox('listing', 9)"
+                  />
+                </div>
+              </div>
             </div>
+            <button
+              class="carousel-btn carousel-next"
+              onclick="carouselNav('listing', 1)"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="carousel-dots" id="dots-listing"></div>
           </div>
-          <button class="carousel-btn carousel-next" onclick="carouselNav('listing',1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <div class="carousel-dots" id="dots-listing"></div>
         </div>
-      </div>
 
-      <div class="samples-category">
-        <h4 class="samples-cat-title">Store Setup, Basic Theme Edit, &amp; Store Localizing</h4>
-        <div class="carousel" id="carousel-store">
-          <button class="carousel-btn carousel-prev" onclick="carouselNav('store',-1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <div class="carousel-track-wrap">
-            <div class="carousel-track">
-              <div class="carousel-slide"><img src="assets/samples/store/store-1.png" alt="Store" loading="lazy" onclick="openLightbox('store',0)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-2.png" alt="Store" loading="lazy" onclick="openLightbox('store',1)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-3.png" alt="Store" loading="lazy" onclick="openLightbox('store',2)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-4.png" alt="Store" loading="lazy" onclick="openLightbox('store',3)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-5.png" alt="Store" loading="lazy" onclick="openLightbox('store',4)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-6.png" alt="Store" loading="lazy" onclick="openLightbox('store',5)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-7.png" alt="Store" loading="lazy" onclick="openLightbox('store',6)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-8.png" alt="Store" loading="lazy" onclick="openLightbox('store',7)"/></div>
-              <div class="carousel-slide"><img src="assets/samples/store/store-9.png" alt="Store" loading="lazy" onclick="openLightbox('store',8)"/></div>
+        <div class="samples-category">
+          <h4 class="samples-cat-title">
+            Store Setup, Basic Theme Edit, &amp; Store Localizing
+          </h4>
+          <div class="carousel" id="carousel-store">
+            <button
+              class="carousel-btn carousel-prev"
+              onclick="carouselNav('store', -1)"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div class="carousel-track-wrap">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-1.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 0)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-2.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 1)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-3.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 2)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-4.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 3)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-5.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 4)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-6.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 5)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-7.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 6)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-8.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 7)"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="assets/samples/store/store-9.png"
+                    alt="Store"
+                    loading="lazy"
+                    onclick="openLightbox('store', 8)"
+                  />
+                </div>
+              </div>
             </div>
+            <button
+              class="carousel-btn carousel-next"
+              onclick="carouselNav('store', 1)"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <div class="carousel-dots" id="dots-store"></div>
           </div>
-          <button class="carousel-btn carousel-next" onclick="carouselNav('store',1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <div class="carousel-dots" id="dots-store"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VIDEO TESTIMONIAL -->
-  <section class="section section-muted" id="testimonials">
-    <div class="container">
-      <div class="section-label">Social Proof</div>
-      <h2 class="section-title">Client Testimonials</h2>
-      <div class="testimonial-wrap">
-        <p class="testimonial-label">~ Direct Mobility USA ~</p>
-        <video class="testimonial-video" id="testimonialVideo" controls preload="metadata"
-               poster="assets/logos/logo-directmobility.webp" muted playsinline>
-          <source src="assets/video-testimonial.mp4" type="video/mp4"/>
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS — tall left, 2 horizontal right, matching sample photo -->
-  <section class="section" id="certifications">
-    <div class="container">
-      <div class="section-label">Credentials</div>
-      <h2 class="section-title">Certifications</h2>
-      <div class="certs-layout">
-        <!-- left: tall vertical cert -->
-        <div class="cert-tall" onclick="openCert(0)">
-          <img src="assets/certs/cert-1.png" alt="Certificate of Completion"/>
-          <div class="cert-zoom">🔍</div>
+    <!-- VIDEO TESTIMONIAL -->
+    <section class="section section-muted" id="testimonials">
+      <div class="container">
+        <div class="section-label">Social Proof</div>
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="testimonial-wrap">
+          <p class="testimonial-label">~ Direct Mobility USA ~</p>
+          <video
+            class="testimonial-video"
+            id="testimonialVideo"
+            controls
+            preload="metadata"
+            poster="assets/logos/logo-directmobility.webp"
+            muted
+            playsinline
+          >
+            <source src="assets/video-testimonial.mp4" type="video/mp4" />
+          </video>
         </div>
-        <!-- right: two horizontal certs stacked -->
-        <div class="certs-stack">
-          <div class="cert-wide" onclick="openCert(1)">
-            <img src="assets/certs/cert-2.png" alt="Certificate of Expertise"/>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS — tall left, 2 horizontal right, matching sample photo -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-label">Credentials</div>
+        <h2 class="section-title">Certifications</h2>
+        <div class="certs-layout">
+          <!-- left: tall vertical cert -->
+          <div class="cert-tall" onclick="openCert(0)">
+            <img
+              src="assets/certs/cert-1.png"
+              alt="Certificate of Completion"
+            />
             <div class="cert-zoom">🔍</div>
           </div>
-          <div class="cert-wide" onclick="openCert(2)">
-            <img src="assets/certs/cert-3.jpg" alt="CSC Certification of Eligibility"/>
-            <div class="cert-zoom">🔍</div>
+          <!-- right: two horizontal certs stacked -->
+          <div class="certs-stack">
+            <div class="cert-wide" onclick="openCert(1)">
+              <img
+                src="assets/certs/cert-2.png"
+                alt="Certificate of Expertise"
+              />
+              <div class="cert-zoom">🔍</div>
+            </div>
+            <div class="cert-wide" onclick="openCert(2)">
+              <img
+                src="assets/certs/cert-3.jpg"
+                alt="CSC Certification of Eligibility"
+              />
+              <div class="cert-zoom">🔍</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT — with uploaded icons -->
-  <section class="section section-muted" id="contact">
-    <div class="container">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Work With Me</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-detail">
-            <img src="assets/logos/icon-whatsapp.png" alt="WhatsApp" class="contact-icon-img"/>
-            <div>
-              <p class="contact-label">WhatsApp / Phone</p>
-              <a href="https://wa.me/639560137170" target="_blank">+63 956 013 7170</a>
+    <!-- CONTACT — with uploaded icons -->
+    <section class="section section-muted" id="contact">
+      <div class="container">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Work With Me</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-detail">
+              <img
+                src="assets/logos/icon-whatsapp.png"
+                alt="WhatsApp"
+                class="contact-icon-img"
+              />
+              <div>
+                <p class="contact-label">WhatsApp / Phone</p>
+                <a href="https://wa.me/639560137170" target="_blank"
+                  >+63 956 013 7170</a
+                >
+              </div>
             </div>
-          </div>
-          <div class="contact-detail">
-            <img src="assets/logos/icon-mail.png" alt="Email" class="contact-icon-img"/>
-            <div>
-              <p class="contact-label">Email</p>
-              <a href="mailto:jandylviosva@gmail.com">jandylviosva@gmail.com</a>
+            <div class="contact-detail">
+              <img
+                src="assets/logos/icon-mail.png"
+                alt="Email"
+                class="contact-icon-img"
+              />
+              <div>
+                <p class="contact-label">Email</p>
+                <a href="mailto:jandylviosva@gmail.com"
+                  >jandylviosva@gmail.com</a
+                >
+              </div>
             </div>
-          </div>
-          <div class="contact-detail">
-            <img src="assets/logos/icon-location.png" alt="Location" class="contact-icon-img"/>
-            <div>
-              <p class="contact-label">Location</p>
-              <span>Valencia City, Bukidnon, Philippines</span>
+            <div class="contact-detail">
+              <img
+                src="assets/logos/icon-location.png"
+                alt="Location"
+                class="contact-icon-img"
+              />
+              <div>
+                <p class="contact-label">Location</p>
+                <span>Valencia City, Bukidnon, Philippines</span>
+              </div>
             </div>
+            <div class="contact-social">
+              <a
+                href="https://www.linkedin.com/in/jandylvios/"
+                target="_blank"
+                class="social-btn"
+              >
+                <img src="assets/logos/social-linkedin.png" alt="" /> LinkedIn
+              </a>
+              <a
+                href="https://www.facebook.com/jandylvios/"
+                target="_blank"
+                class="social-btn"
+              >
+                <img src="assets/logos/social-facebook.png" alt="" /> Facebook
+              </a>
+              <a
+                href="https://m.me/jandylvios"
+                target="_blank"
+                class="social-btn"
+              >
+                <img src="assets/logos/social-messenger.png" alt="" /> Messenger
+              </a>
+              <a
+                href="https://v2.onlinejobs.ph/jobseekers/info/2454135"
+                target="_blank"
+                class="social-btn"
+              >
+                <img src="assets/logos/social-onlinejobs.jpg" alt="" />
+                OnlineJobs.ph
+              </a>
+            </div>
+            <a
+              href=""
+              class="btn btn-primary btn-full"
+              onclick="
+                Calendly.initPopupWidget({
+                  url: 'https://calendly.com/jvecomva/30min',
+                });
+                return false;
+              "
+              >📅 Book a Discovery Call</a
+            >
           </div>
-          <div class="contact-social">
-            <a href="https://www.linkedin.com/in/jandylvios/" target="_blank" class="social-btn">
-              <img src="assets/logos/social-linkedin.png" alt=""/> LinkedIn
-            </a>
-            <a href="https://www.facebook.com/jandylvios/" target="_blank" class="social-btn">
-              <img src="assets/logos/social-facebook.png" alt=""/> Facebook
-            </a>
-            <a href="https://m.me/jandylvios" target="_blank" class="social-btn">
-              <img src="assets/logos/social-messenger.png" alt=""/> Messenger
-            </a>
-            <a href="https://v2.onlinejobs.ph/jobseekers/info/2454135" target="_blank" class="social-btn">
-              <img src="assets/logos/social-onlinejobs.jpg" alt=""/> OnlineJobs.ph
-            </a>
-          </div>
-          <a href="" class="btn btn-primary btn-full"
-             onclick="Calendly.initPopupWidget({url:'https://calendly.com/jvecomva/30min'});return false;">📅 Book a Discovery Call</a>
+
+          <form class="contact-form" id="contact-form">
+            <h3>Send a Message</h3>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Jane Smith"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="jane@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me about your store and what you need help with..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send Message
+            </button>
+            <p class="form-note">
+              We HATE spam. Your email address is 100% secure.
+            </p>
+          </form>
         </div>
+      </div>
+    </section>
 
-        <form class="contact-form" id="contact-form">
-          <h3>Send a Message</h3>
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="jane@example.com" required/>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your store and what you need help with..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-          <p class="form-note">We HATE spam. Your email address is 100% secure.</p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER — logo only, no text name -->
-  <footer id="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="#"><img src="assets/mylogo2.png" alt="JV Ecom VA" class="footer-logo-img"/></a>
-        <p><em>Seamless Support, Infinite Possibilities</em></p>
-      </div>
-      <div class="footer-links">
-        <a href="#about-me">About</a>
-        <a href="#services-offered">Services</a>
-        <a href="#sample-works">Samples</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <!-- FOOTER — logo only, no text name -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#"
+            ><img
+              src="assets/mylogo2.png"
+              alt="JV Ecom VA"
+              class="footer-logo-img"
+          /></a>
+          <p><em>Seamless Support, Infinite Possibilities</em></p>
+        </div>
+        <div class="footer-links">
+          <a href="#about-me">About</a>
+          <a href="#services-offered">Services</a>
+          <a href="#sample-works">Samples</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <!--  
       <div class="footer-social">
         <a href="https://www.linkedin.com/in/jandylvios/" target="_blank">LinkedIn</a>
         <a href="https://www.facebook.com/jandylvios/" target="_blank">Facebook</a>
         <a href="https://m.me/jandylvios" target="_blank">Messenger</a>
         <a href="https://v2.onlinejobs.ph/jobseekers/info/2454135" target="_blank">OnlineJobs.ph</a>
       </div>
-    </div>
-    <p class="footer-copy">© <span id="year"></span> Jandyl Vios · JV Ecom VA · All Rights Reserved</p>
-  </footer>
+      --></div>
+      <p class="footer-copy">
+        © <span id="year"></span> Jandyl Vios · JV Ecom VA · All Rights Reserved
+      </p>
+    </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox" onclick="closeLightboxBg(event)">
-    <button class="lb-close" onclick="closeLightbox()">&times;</button>
-    <button class="lb-prev" onclick="lbNav(-1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <div class="lb-img-wrap">
-      <img id="lb-img" src="" alt=""/>
-      <p id="lb-counter" class="lb-counter"></p>
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" onclick="closeLightboxBg(event)">
+      <button class="lb-close" onclick="closeLightbox()">&times;</button>
+      <button class="lb-prev" onclick="lbNav(-1)">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <div class="lb-img-wrap">
+        <img id="lb-img" src="" alt="" />
+        <p id="lb-counter" class="lb-counter"></p>
+      </div>
+      <button class="lb-next" onclick="lbNav(1)">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
     </div>
-    <button class="lb-next" onclick="lbNav(1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-  </div>
 
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script src="script.js"></script>
-</body>
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>

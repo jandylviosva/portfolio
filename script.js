@@ -36,7 +36,7 @@ if (form) {
     btn.textContent = 'Sending…'; btn.disabled = true;
     const data = new FormData(form);
     try {
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const res = await fetch('https://formspree.io/f/xyklplag', {
         method:'POST', body:data, headers:{Accept:'application/json'}
       });
       if (res.ok) { btn.textContent='✓ Message Sent!'; btn.style.background='#1a8a5a'; form.reset(); }
@@ -140,7 +140,9 @@ let lbGallery = [], lbIndex = 0;
 function openLightbox(gallery, index) {
   lbGallery = lbGalleries[gallery];
   lbIndex   = index;
-  document.getElementById('lightbox').classList.add('active');
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('active');
+  lb.classList.remove('cert-open');
   document.body.style.overflow = 'hidden';
   updateLightbox();
 }
@@ -149,7 +151,8 @@ function openLightbox(gallery, index) {
 function openCert(index) {
   lbGallery = lbGalleries['certs'];
   lbIndex   = index;
-  document.getElementById('lightbox').classList.add('active');
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('active', 'cert-open');
   document.body.style.overflow = 'hidden';
   updateLightbox();
 }
@@ -163,7 +166,8 @@ function lbNav(dir) {
   updateLightbox();
 }
 function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('active', 'cert-open');
   document.body.style.overflow = '';
 }
 function closeLightboxBg(e) { if (e.target.id === 'lightbox') closeLightbox(); }
