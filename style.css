@@ -594,12 +594,6 @@ ul{list-style:none}
     top: 12px !important;
     right: 16px !important;
   }
-   .cert-mobile, cert-mobile img{
-      height: auto !important;
-      width: 100% !important;
-      max-height: auto !important;
-      max-width: 100% !important
-   }
 }
 
 /* ── CAROUSEL ARROWS: fix centering + use SVG arrows ── */
@@ -637,4 +631,12 @@ ul{list-style:none}
   max-height: 85vh;
   object-fit: contain;
   border-radius: var(--r-md);
+}
+@media (max-width: 749px){
+   .cert-mobile, cert-mobile img{
+      height: auto !important;
+      width: 100% !important;
+      max-height: auto !important;
+      max-width: 100% !important
+   }
 }
