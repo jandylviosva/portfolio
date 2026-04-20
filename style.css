@@ -276,8 +276,8 @@ ul{list-style:none}
 /* ── CERTIFICATE LIGHTBOX — fully separate, no conflict ── */
 .cert-lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.93);align-items:center;justify-content:center;gap:16px;padding:20px}
 .cert-lightbox.active{display:flex}
-.cert-lb-wrap{display:flex;flex-direction:column;align-items:center;width:min(90vw,780px)}
-.cert-lb-wrap img{width:100%;height:auto;max-height:88vh;object-fit:contain;border-radius:12px;display:block;box-shadow:0 8px 60px rgba(0,0,0,.6)}
+.cert-lb-wrap {display: flex;flex-direction: column;align-items: center;width: min(95vw, 860px);}
+.cert-lb-wrap img {width: 100%;height: auto;max-height: 90vh;object-fit: contain;border-radius: 12px;display: block;box-shadow: 0 8px 60px rgba(0,0,0,.6);}
 .cert-lb-counter{color:rgba(255,255,255,.5);font-size:.85rem;margin-top:10px;text-align:center}
 .cert-lb-close{position:fixed;top:20px;right:24px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:2rem;width:44px;height:44px;border-radius:50%;cursor:pointer;z-index:10000;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .cert-lb-close:hover{background:rgba(255,255,255,.28)}
