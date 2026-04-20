@@ -632,11 +632,3 @@ ul{list-style:none}
   object-fit: contain;
   border-radius: var(--r-md);
 }
-@media (max-width: 749px){
-   .cert-mobile, cert-mobile img{
-      height: auto !important;
-      width: 100% !important;
-      max-height: auto !important;
-      max-width: 100% !important
-   }
-}
