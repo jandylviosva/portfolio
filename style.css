@@ -594,6 +594,12 @@ ul{list-style:none}
     top: 12px !important;
     right: 16px !important;
   }
+   .cert-mobile, cert-mobile img{
+      height: auto !important;
+      width: 100% !important;
+      max-height: auto !important;
+      max-width: 100% !important
+   }
 }
 
 /* ── CAROUSEL ARROWS: fix centering + use SVG arrows ── */
