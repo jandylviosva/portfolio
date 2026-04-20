@@ -27,7 +27,7 @@ revealEls.forEach(el => {
   ro.observe(el);
 });
 
-// Contact form (Formspree fallback to mailto)
+// Contact form — Formspree
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', async e => {
@@ -82,7 +82,6 @@ function updateCarousel(id) {
   carousels[id].index = Math.max(0, Math.min(carousels[id].index, pages - 1));
   const track = document.querySelector('#carousel-' + id + ' .carousel-track');
   if (track) {
-    // each slide is 1/pv wide; move by full page widths
     const slideW = 100 / pv;
     track.style.transform = `translateX(-${carousels[id].index * slideW * pv}%)`;
   }
@@ -100,7 +99,7 @@ function carouselNav(id, dir) {
 ['appt','listing','store'].forEach(id => { buildDots(id); updateCarousel(id); });
 window.addEventListener('resize', () => ['appt','listing','store'].forEach(id => { buildDots(id); updateCarousel(id); }));
 
-// ── Touch/drag swipe for desktop carousel ──
+// Touch/drag swipe for carousel
 ['appt','listing','store'].forEach(id => {
   const wrap = document.querySelector('#carousel-' + id + ' .carousel-track-wrap');
   if (!wrap) return;
@@ -108,13 +107,11 @@ window.addEventListener('resize', () => ['appt','listing','store'].forEach(id =>
   wrap.addEventListener('mousedown',  e => { isDragging = true; startX = e.clientX; });
   wrap.addEventListener('mousemove',  e => { if (!isDragging) return; e.preventDefault(); });
   wrap.addEventListener('mouseup',    e => {
-    if (!isDragging) return;
-    isDragging = false;
+    if (!isDragging) return; isDragging = false;
     const diff = startX - e.clientX;
     if (Math.abs(diff) > 40) carouselNav(id, diff > 0 ? 1 : -1);
   });
   wrap.addEventListener('mouseleave', () => { isDragging = false; });
-  // touch
   wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
   wrap.addEventListener('touchend',   e => {
     const diff = startX - e.changedTouches[0].clientX;
@@ -123,40 +120,22 @@ window.addEventListener('resize', () => ['appt','listing','store'].forEach(id =>
 });
 
 // ============================================================
-// LIGHTBOX  (shared for samples + certs)
+// SAMPLE WORKS LIGHTBOX
 // ============================================================
 const lbGalleries = {
   appt:    Array.from({length:8},  (_,i) => `assets/samples/appt/appt-${i+1}.png`),
   listing: Array.from({length:10}, (_,i) => `assets/samples/listing/listing-${i+1}.png`),
-  store:   Array.from({length:9},  (_,i) => `assets/samples/store/store-${i+1}.png`),
-  certs:   [
-    'assets/certs/cert-1.png',
-    'assets/certs/cert-2.png',
-    'assets/certs/cert-3.jpg'
-  ]
+  store:   Array.from({length:9},  (_,i) => `assets/samples/store/store-${i+1}.png`)
 };
 let lbGallery = [], lbIndex = 0;
 
 function openLightbox(gallery, index) {
   lbGallery = lbGalleries[gallery];
   lbIndex   = index;
-  const lb = document.getElementById('lightbox');
-  lb.classList.add('active');
-  lb.classList.remove('cert-open');
+  document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
   updateLightbox();
 }
-
-// Certificates — single image, no nav arrows needed but reuse lightbox
-function openCert(index) {
-  lbGallery = lbGalleries['certs'];
-  lbIndex   = index;
-  const lb = document.getElementById('lightbox');
-  lb.classList.add('active', 'cert-open');
-  document.body.style.overflow = 'hidden';
-  updateLightbox();
-}
-
 function updateLightbox() {
   document.getElementById('lb-img').src = lbGallery[lbIndex];
   document.getElementById('lb-counter').textContent = (lbIndex+1) + ' / ' + lbGallery.length;
@@ -166,20 +145,54 @@ function lbNav(dir) {
   updateLightbox();
 }
 function closeLightbox() {
-  const lb = document.getElementById('lightbox');
-  lb.classList.remove('active', 'cert-open');
+  document.getElementById('lightbox').classList.remove('active');
   document.body.style.overflow = '';
 }
 function closeLightboxBg(e) { if (e.target.id === 'lightbox') closeLightbox(); }
 document.addEventListener('keydown', e => {
-  if (!document.getElementById('lightbox').classList.contains('active')) return;
-  if (e.key==='ArrowRight') lbNav(1);
-  if (e.key==='ArrowLeft')  lbNav(-1);
-  if (e.key==='Escape')     closeLightbox();
+  if (document.getElementById('lightbox').classList.contains('active')) {
+    if (e.key==='ArrowRight') lbNav(1);
+    if (e.key==='ArrowLeft')  lbNav(-1);
+    if (e.key==='Escape')     closeLightbox();
+  }
 });
 
 // ============================================================
-// VIDEO AUTOPLAY ON SCROLL INTO VIEW
+// CERTIFICATE LIGHTBOX — completely separate from sample works
+// ============================================================
+const certImages = [
+  'assets/certs/cert-1.png',
+  'assets/certs/cert-2.png',
+  'assets/certs/cert-3.jpg'
+];
+let certIndex = 0;
+
+function openCert(index) {
+  certIndex = index;
+  document.getElementById('cert-lb-img').src = certImages[certIndex];
+  document.getElementById('cert-lb-counter').textContent = (certIndex+1) + ' / ' + certImages.length;
+  document.getElementById('cert-lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function certLbNav(dir) {
+  certIndex = (certIndex + dir + certImages.length) % certImages.length;
+  document.getElementById('cert-lb-img').src = certImages[certIndex];
+  document.getElementById('cert-lb-counter').textContent = (certIndex+1) + ' / ' + certImages.length;
+}
+function closeCertLightbox() {
+  document.getElementById('cert-lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (document.getElementById('cert-lightbox').classList.contains('active')) {
+    if (e.key==='ArrowRight') certLbNav(1);
+    if (e.key==='ArrowLeft')  certLbNav(-1);
+    if (e.key==='Escape')     closeCertLightbox();
+  }
+});
+
+// ============================================================
+// VIDEO AUTOPLAY ON SCROLL
 // ============================================================
 const vid = document.getElementById('testimonialVideo');
 if (vid) {

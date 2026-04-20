@@ -515,9 +515,6 @@
           <div class="tool-chip">
             <img src="assets/logos/tool-klaviyo.png" alt="" />Klaviyo
           </div>
-          <div class="tool-chip">
-            <img src="assets/logos/tool-judgeme.jpg" alt="" />Judge.me
-          </div>
           <!-- duplicate -->
           <div class="tool-chip">
             <img src="assets/logos/tool-shopify.png" alt="" />Shopify Admin
@@ -549,9 +546,6 @@
           </div>
           <div class="tool-chip">
             <img src="assets/logos/tool-klaviyo.png" alt="" />Klaviyo
-          </div>
-          <div class="tool-chip">
-            <img src="assets/logos/tool-judgeme.jpg" alt="" />Judge.me
           </div>
         </div>
       </div>
@@ -1232,7 +1226,7 @@
                 });
                 return false;
               "
-              >Book a Discovery Call</a
+              >📅 Book a Discovery Call</a
             >
           </div>
 
@@ -1310,41 +1304,30 @@
       </p>
     </footer>
 
-    <!-- LIGHTBOX -->
+    <!-- SAMPLE WORKS LIGHTBOX -->
     <div id="lightbox" class="lightbox" onclick="closeLightboxBg(event)">
       <button class="lb-close" onclick="closeLightbox()">&times;</button>
       <button class="lb-prev" onclick="lbNav(-1)">
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
       <div class="lb-img-wrap">
-        <img id="lb-img" src="" alt="" />
+        <img id="lb-img" src="" alt=""/>
         <p id="lb-counter" class="lb-counter"></p>
       </div>
       <button class="lb-next" onclick="lbNav(1)">
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
+    </div>
+
+    <!-- CERTIFICATE LIGHTBOX (separate — no mobile scroll conflict) -->
+    <div id="cert-lightbox" class="cert-lightbox" onclick="if(event.target===this)closeCertLightbox()">
+      <button class="cert-lb-close" onclick="closeCertLightbox()">&times;</button>
+      <button class="cert-lb-prev" onclick="certLbNav(-1)">&#8249;</button>
+      <div class="cert-lb-wrap">
+        <img id="cert-lb-img" src="" alt=""/>
+        <p id="cert-lb-counter" class="cert-lb-counter"></p>
+      </div>
+      <button class="cert-lb-next" onclick="certLbNav(1)">&#8250;</button>
     </div>
 
     <script
