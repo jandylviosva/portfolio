@@ -632,3 +632,55 @@ ul{list-style:none}
   object-fit: contain;
   border-radius: var(--r-md);
 }
+
+/* ── CERTIFICATE LIGHTBOX OVERRIDE (mobile + desktop) ── */
+/* Completely separate from sample works lightbox behavior  */
+
+.lightbox.cert-open {
+  padding: 16px !important;
+  align-items: center !important;
+  flex-direction: row !important;
+}
+
+.lightbox.cert-open .lb-img-wrap {
+  position: static !important;
+  transform: none !important;
+  width: min(95vw, 820px) !important;
+  max-width: min(95vw, 820px) !important;
+  max-height: 90vh !important;
+  height: auto !important;
+  overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.lightbox.cert-open #lb-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 82vh !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+}
+
+/* Override the mobile-specific lightbox scroll behavior for certs */
+@media (max-width: 700px) {
+  .lightbox.cert-open .lb-img-wrap {
+    position: static !important;
+    transform: none !important;
+    width: 95vw !important;
+    max-width: 95vw !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+    scroll-snap-type: none !important;
+  }
+  .lightbox.cert-open #lb-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 80vh !important;
+    scroll-snap-align: none !important;
+  }
+}
