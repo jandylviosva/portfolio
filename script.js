@@ -192,11 +192,62 @@ document.addEventListener('keydown', e => {
 });
 
 // ============================================================
-// VIDEO AUTOPLAY ON SCROLL
+// VIDEO TESTIMONIAL CAROUSEL
 // ============================================================
-const vid = document.getElementById('testimonialVideo');
-if (vid) {
-  new IntersectionObserver(entries => {
-    entries[0].isIntersecting ? vid.play() : vid.pause();
-  }, { threshold: 0.5 }).observe(vid);
-}
+(function () {
+  const slides   = Array.from(document.querySelectorAll('.tv-slide'));
+  const dotsWrap = document.getElementById('tvDots');
+  const controls = document.getElementById('tvControls');
+  const prevBtn  = document.getElementById('tvPrev');
+  const nextBtn  = document.getElementById('tvNext');
+  if (!slides.length) return;
+
+  let current = 0;
+
+  // Build dot buttons
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'tv-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+
+  // Hide controls when there is only one slide
+  if (slides.length < 2) {
+    controls.classList.add('hidden');
+  }
+
+  function goTo(index) {
+    // Pause current video before switching
+    const currentVid = slides[current].querySelector('video');
+    if (currentVid) currentVid.pause();
+
+    slides[current].classList.remove('active');
+    dotsWrap.children[current].classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dotsWrap.children[current].classList.add('active');
+  }
+
+  // Show first slide
+  slides[0].classList.add('active');
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Autoplay active video when scrolled into view
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      const vid = slides[current].querySelector('video');
+      if (vid) vid.play();
+    } else {
+      slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+    }
+  }, { threshold: 0.5 });
+
+  const carousel = document.getElementById('tvCarousel');
+  if (carousel) observer.observe(carousel);
+})();

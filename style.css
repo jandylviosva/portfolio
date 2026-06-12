@@ -210,9 +210,20 @@ ul{list-style:none}
 .carousel-dot.active{background:var(--blue);transform:scale(1.35)}
 
 /* ── TESTIMONIAL ── */
-.testimonial-wrap{max-width:480px;margin:0 auto;text-align:center}
+/* ── VIDEO TESTIMONIAL CAROUSEL ────────────────────────────────────── */
+.tv-carousel{position:relative;max-width:520px;margin:0 auto;overflow:hidden}
+.tv-slide{display:none;text-align:center;animation:tvFade .35s ease}
+.tv-slide.active{display:block}
+@keyframes tvFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .testimonial-label{font-size:1rem;font-weight:600;color:var(--blue-dark);margin-bottom:16px;letter-spacing:.05em}
 .testimonial-video{width:100%;border-radius:var(--r-lg);border:2px solid var(--border);box-shadow:0 8px 40px rgba(27,95,170,.1)}
+.tv-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
+.tv-controls.hidden{display:none}
+.tv-btn{background:var(--blue-dark);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.1rem;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center}
+.tv-btn:hover{background:var(--blue)}
+.tv-dots{display:flex;gap:8px;align-items:center}
+.tv-dot{width:10px;height:10px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background .2s}
+.tv-dot.active{background:var(--blue-dark)}
 
 /* ── CERTIFICATIONS ── */
 .certs-layout{display:grid;grid-template-columns:400px 385px;gap:24px;align-items:start;justify-content:center}

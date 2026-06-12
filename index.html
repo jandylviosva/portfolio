@@ -162,7 +162,7 @@
                     >
                   </p>
                   <p class="info-sub">
-                    Caraga State University <br><span>2023</span>
+                    Caraga State University <br /><span>2023</span>
                   </p>
                 </div>
               </div>
@@ -188,7 +188,7 @@
                     >
                   </p>
                   <p class="info-sub">
-                    Your VA Buddy: Expert VA Training <br><span>2024</span>
+                    Your VA Buddy: Expert VA Training <br /><span>2024</span>
                   </p>
                 </div>
               </div>
@@ -602,7 +602,8 @@
             <img src="assets/logos/tool-xero.png" alt="" />Xero
           </div>
           <div class="tool-chip">
-            <img src="assets/logos/tool-googleworkspace.png" alt="" />Google Workspace
+            <img src="assets/logos/tool-googleworkspace.png" alt="" />Google
+            Workspace
           </div>
           <!-- duplicate -->
           <div class="tool-chip">
@@ -639,7 +640,8 @@
             <img src="assets/logos/tool-xero.png" alt="" />Xero
           </div>
           <div class="tool-chip">
-            <img src="assets/logos/tool-googleworkspace.png" alt="" />Google Workspace
+            <img src="assets/logos/tool-googleworkspace.png" alt="" />Google
+            Workspace
           </div>
         </div>
       </div>
@@ -1113,24 +1115,91 @@
       </div>
     </section>
 
-    <!-- VIDEO TESTIMONIAL -->
+    <!-- VIDEO TESTIMONIALS
+         ─────────────────────────────────────────────────────────────
+         HOW TO ADD A NEW VIDEO TESTIMONIAL
+         ─────────────────────────────────────────────────────────────
+         1. Upload your video file to the /assets/ folder
+            (e.g. assets/video-testimonial-2.mp4)
+
+         2. (Optional) Add a poster/thumbnail image to /assets/logos/
+            (shown before the video plays — omit the poster attr to show a blank player)
+
+         3. Copy ONE <div class="tv-slide"> block below and paste it
+            after the last existing one, then fill in:
+              • data-label  → client / company name shown above the video
+              • poster      → path to the thumbnail image (or remove the attr)
+              • <source src → path to the video file
+
+         That's it — the carousel, dots, and prev/next arrows update
+         automatically based on how many slides are present.
+         ─────────────────────────────────────────────────────────────
+    -->
     <section class="section section-muted" id="testimonials">
       <div class="container">
         <div class="section-label">Social Proof</div>
         <h2 class="section-title">Client Testimonials</h2>
-        <div class="testimonial-wrap">
-          <p class="testimonial-label">~ Direct Mobility USA ~</p>
-          <video
-            class="testimonial-video"
-            id="testimonialVideo"
-            controls
-            preload="metadata"
-            poster="assets/logos/logo-directmobility.webp"
-            muted
-            playsinline
-          >
-            <source src="assets/video-testimonial.mp4" type="video/mp4" />
-          </video>
+
+        <div class="tv-carousel" id="tvCarousel">
+          <!-- ── SLIDE 1 ─────────────────────────────────────────── -->
+          <div class="tv-slide">
+            <video
+              class="testimonial-video tv-video"
+              controls
+              preload="metadata"
+              muted
+              playsinline
+            >
+              <source src="assets/video-testimonial.mp4" type="video/mp4" />
+            </video>
+            <p class="testimonial-label">~ Direct Mobility USA ~</p>
+          </div>
+          <!-- ── END SLIDE 1 ──────────────────────────────────────── -->
+
+          <!-- ── SLIDE 2 ─────────────────────────────────────────── -->
+          <div class="tv-slide">
+            <video
+              class="testimonial-video tv-video"
+              controls
+              preload="metadata"
+              muted
+              playsinline
+            >
+              <source src="assets/video-testimonial-2.mp4" type="video/mp4" />
+            </video>
+            <p class="testimonial-label">~ XCLUSIVE JERSEYS ~</p>
+          </div>
+          <!-- ── END SLIDE 2 ──────────────────────────────────────── -->
+
+          <!-- ── ADD MORE SLIDES HERE ────────────────────────────── -->
+          <!--
+          <div class="tv-slide">
+            <p class="testimonial-label">~ Client Name ~</p>
+            <video
+              class="testimonial-video tv-video"
+              controls
+              preload="metadata"
+              poster="assets/logos/logo-clientname.png"
+              (remove this line if you don't want a thumbnail before play)
+              muted
+              playsinline
+            >
+              <source src="assets/video-testimonial-3.mp4" type="video/mp4" />
+            </video>
+          </div>
+          -->
+        </div>
+        <!-- /.tv-carousel -->
+
+        <!-- Navigation controls (auto-hidden when only 1 slide) -->
+        <div class="tv-controls" id="tvControls">
+          <button class="tv-btn" id="tvPrev" aria-label="Previous testimonial">
+            &#8592;
+          </button>
+          <div class="tv-dots" id="tvDots"></div>
+          <button class="tv-btn" id="tvNext" aria-label="Next testimonial">
+            &#8594;
+          </button>
         </div>
       </div>
     </section>
@@ -1212,7 +1281,8 @@
               <div>
                 <p class="contact-label">Location</p>
                 <a href="https://maps.app.goo.gl/xRk8vVKshnuFTvXC9"
-                  >Valencia City, Bukidnon, Philippines</a>
+                  >Valencia City, Bukidnon, Philippines</a
+                >
               </div>
             </div>
             <div class="contact-social">
@@ -1337,22 +1407,50 @@
     <div id="lightbox" class="lightbox" onclick="closeLightboxBg(event)">
       <button class="lb-close" onclick="closeLightbox()">&times;</button>
       <button class="lb-prev" onclick="lbNav(-1)">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
       </button>
       <div class="lb-img-wrap">
-        <img id="lb-img" src="" alt=""/>
+        <img id="lb-img" src="" alt="" />
         <p id="lb-counter" class="lb-counter"></p>
       </div>
       <button class="lb-next" onclick="lbNav(1)">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
       </button>
     </div>
 
     <!-- CERTIFICATE LIGHTBOX (separate — no mobile scroll conflict) -->
-    <div id="cert-lightbox" class="cert-lightbox" onclick="if(event.target===this)closeCertLightbox()">
-      <button class="cert-lb-close" onclick="closeCertLightbox()">&times;</button>
+    <div
+      id="cert-lightbox"
+      class="cert-lightbox"
+      onclick="if (event.target === this) closeCertLightbox();"
+    >
+      <button class="cert-lb-close" onclick="closeCertLightbox()">
+        &times;
+      </button>
       <div class="cert-lb-wrap">
-        <img id="cert-lb-img" src="" alt=""/>
+        <img id="cert-lb-img" src="" alt="" />
         <p id="cert-lb-counter" class="cert-lb-counter"></p>
       </div>
     </div>
