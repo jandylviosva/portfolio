@@ -1201,67 +1201,65 @@
         <div class="section-label">Social Proof</div>
         <h2 class="section-title">Client Testimonials</h2>
 
-        <div class="tv-carousel" id="tvCarousel">
-          <!-- ── SLIDE 1 ─────────────────────────────────────────── -->
-          <div class="tv-slide">
-            <video
-              class="testimonial-video tv-video"
-              controls
-              preload="metadata"
-              muted
-              playsinline
-            >
-              <source src="assets/video-testimonial.mp4" type="video/mp4" />
-            </video>
-            <p class="testimonial-label">~ Direct Mobility USA ~</p>
-          </div>
-          <!-- ── END SLIDE 1 ──────────────────────────────────────── -->
+        <!-- ── HOW TO ADD A NEW TESTIMONIAL ──────────────────────────
+             Copy one .tv-slide block, paste before the closing </div>
+             of #tvCarousel, then fill in label, quote, and video src.
+             Scroll arrows appear automatically when there are >5 videos.
+        ─────────────────────────────────────────────────────────────── -->
+        <div class="tv-wrapper">
+          <button class="tv-scroll-btn hidden" id="tvPrev" aria-label="Previous">&#8592;</button>
 
-          <!-- ── SLIDE 2 ─────────────────────────────────────────── -->
-          <div class="tv-slide">
-            <video
-              class="testimonial-video tv-video"
-              controls
-              preload="metadata"
-              muted
-              playsinline
-            >
-              <source src="assets/video-testimonial-2.mp4" type="video/mp4" />
-            </video>
-            <p class="testimonial-label">~ ESSANTIALS ~</p>
-          </div>
-          <!-- ── END SLIDE 2 ──────────────────────────────────────── -->
+          <div class="tv-carousel" id="tvCarousel">
 
-          <!-- ── ADD MORE SLIDES HERE ────────────────────────────── -->
-          <!--
-          <div class="tv-slide">
-            <p class="testimonial-label">~ Client Name ~</p>
-            <video
-              class="testimonial-video tv-video"
-              controls
-              preload="metadata"
-              poster="assets/logos/logo-clientname.png"
-              (remove this line if you don't want a thumbnail before play)
-              muted
-              playsinline
-            >
-              <source src="assets/video-testimonial-3.mp4" type="video/mp4" />
-            </video>
+            <!-- ── SLIDE 1 ─────────────────────────────────────────── -->
+            <div class="tv-slide">
+              <p class="testimonial-label">~ Leo · Direct Mobility USA ~</p>
+              <video
+                class="testimonial-video tv-video"
+                controls
+                preload="metadata"
+                muted
+                playsinline
+              >
+                <source src="assets/video-testimonial.mp4" type="video/mp4" />
+              </video>
+              <p class="testimonial-quote">"He was literally my right hand ever since he started working for this company."</p>
+            </div>
+            <!-- ── END SLIDE 1 ──────────────────────────────────────── -->
+
+            <!-- ── SLIDE 2 ─────────────────────────────────────────── -->
+            <div class="tv-slide">
+              <p class="testimonial-label">~ Faisal · ESSANTIALS ~</p>
+              <video
+                class="testimonial-video tv-video"
+                controls
+                preload="metadata"
+                muted
+                playsinline
+              >
+                <source src="assets/video-testimonial-2.mp4" type="video/mp4" />
+              </video>
+              <p class="testimonial-quote">"He's been doing so much great things for me."</p>
+            </div>
+            <!-- ── END SLIDE 2 ──────────────────────────────────────── -->
+
+            <!-- ── ADD MORE SLIDES HERE ────────────────────────────── -->
+            <!--
+            <div class="tv-slide">
+              <p class="testimonial-label">~ Name · Company ~</p>
+              <video class="testimonial-video tv-video" controls preload="metadata" muted playsinline>
+                <source src="assets/video-testimonial-3.mp4" type="video/mp4" />
+              </video>
+              <p class="testimonial-quote">"Their quote here."</p>
+            </div>
+            -->
+
           </div>
-          -->
+          <!-- /.tv-carousel -->
+
+          <button class="tv-scroll-btn hidden" id="tvNext" aria-label="Next">&#8594;</button>
         </div>
-        <!-- /.tv-carousel -->
-
-        <!-- Navigation controls (auto-hidden when only 1 slide) -->
-        <div class="tv-controls" id="tvControls">
-          <button class="tv-btn" id="tvPrev" aria-label="Previous testimonial">
-            &#8592;
-          </button>
-          <div class="tv-dots" id="tvDots"></div>
-          <button class="tv-btn" id="tvNext" aria-label="Next testimonial">
-            &#8594;
-          </button>
-        </div>
+        <!-- /.tv-wrapper -->
       </div>
     </section>
 

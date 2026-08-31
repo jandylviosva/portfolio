@@ -194,25 +194,69 @@ document.addEventListener('keydown', e => {
 // ============================================================
 // VIDEO TESTIMONIAL CAROUSEL
 // ============================================================
-// Desktop: CSS grid shows all slides (up to 5 per row) — no JS nav needed.
-// Mobile: CSS flex + overflow-x scroll (touch) — buttons hidden via CSS.
-// JS only handles: pause-on-leave (all visible videos) + controls hide when ≤1 slide.
+// Desktop: flex row, centered. Shows all slides when ≤5.
+//   When >5: overflow hidden, prev/next buttons page through by 5.
+// Mobile: touch-scroll only, buttons hidden via CSS.
 (function () {
+  const MAX_VISIBLE = 5;
   const slides   = Array.from(document.querySelectorAll('.tv-slide'));
-  const controls = document.getElementById('tvControls');
-  if (!slides.length) return;
+  const carousel = document.getElementById('tvCarousel');
+  const prevBtn  = document.getElementById('tvPrev');
+  const nextBtn  = document.getElementById('tvNext');
+  if (!slides.length || !carousel) return;
 
-  // Hide arrow controls entirely — layout is now grid/scroll based
-  if (controls) controls.classList.add('hidden');
+  const isMobile = () => window.innerWidth <= 767;
+  let offset = 0; // index of first visible slide (desktop paging)
+
+  function needsNav() {
+    return !isMobile() && slides.length > MAX_VISIBLE;
+  }
+
+  function updateButtons() {
+    if (!needsNav()) {
+      prevBtn.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+      return;
+    }
+    prevBtn.classList.remove('hidden');
+    nextBtn.classList.remove('hidden');
+    prevBtn.disabled = offset === 0;
+    nextBtn.disabled = offset + MAX_VISIBLE >= slides.length;
+  }
+
+  function renderVisible() {
+    if (isMobile()) {
+      // Mobile: all slides visible, CSS handles scroll
+      slides.forEach(s => s.style.display = '');
+      return;
+    }
+    slides.forEach((s, i) => {
+      s.style.display = (i >= offset && i < offset + MAX_VISIBLE) ? '' : 'none';
+    });
+    updateButtons();
+  }
+
+  function page(dir) {
+    // Pause any playing videos
+    slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+    offset = Math.max(0, Math.min(offset + dir * MAX_VISIBLE, slides.length - MAX_VISIBLE));
+    renderVisible();
+  }
+
+  prevBtn.addEventListener('click', () => page(-1));
+  nextBtn.addEventListener('click', () => page(1));
+
+  // Re-render on resize (mobile ↔ desktop switch)
+  window.addEventListener('resize', renderVisible);
+
+  // Initial render
+  renderVisible();
 
   // Pause all videos when section scrolls out of view
-  const carousel = document.getElementById('tvCarousel');
-  if (carousel) {
-    const observer = new IntersectionObserver(entries => {
-      if (!entries[0].isIntersecting) {
-        slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
-      }
-    }, { threshold: 0.1 });
-    observer.observe(carousel);
-  }
+  const observer = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) {
+      slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+    }
+  }, { threshold: 0.1 });
+  observer.observe(carousel);
 })();
