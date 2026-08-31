@@ -194,60 +194,25 @@ document.addEventListener('keydown', e => {
 // ============================================================
 // VIDEO TESTIMONIAL CAROUSEL
 // ============================================================
+// Desktop: CSS grid shows all slides (up to 5 per row) — no JS nav needed.
+// Mobile: CSS flex + overflow-x scroll (touch) — buttons hidden via CSS.
+// JS only handles: pause-on-leave (all visible videos) + controls hide when ≤1 slide.
 (function () {
   const slides   = Array.from(document.querySelectorAll('.tv-slide'));
-  const dotsWrap = document.getElementById('tvDots');
   const controls = document.getElementById('tvControls');
-  const prevBtn  = document.getElementById('tvPrev');
-  const nextBtn  = document.getElementById('tvNext');
   if (!slides.length) return;
 
-  let current = 0;
+  // Hide arrow controls entirely — layout is now grid/scroll based
+  if (controls) controls.classList.add('hidden');
 
-  // Build dot buttons
-  slides.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'tv-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Testimonial ' + (i + 1));
-    d.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(d);
-  });
-
-  // Hide controls when there is only one slide
-  if (slides.length < 2) {
-    controls.classList.add('hidden');
-  }
-
-  function goTo(index) {
-    // Pause current video before switching
-    const currentVid = slides[current].querySelector('video');
-    if (currentVid) currentVid.pause();
-
-    slides[current].classList.remove('active');
-    dotsWrap.children[current].classList.remove('active');
-
-    current = (index + slides.length) % slides.length;
-
-    slides[current].classList.add('active');
-    dotsWrap.children[current].classList.add('active');
-  }
-
-  // Show first slide
-  slides[0].classList.add('active');
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
-  // Autoplay active video when scrolled into view
-  const observer = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      const vid = slides[current].querySelector('video');
-      if (vid) vid.play();
-    } else {
-      slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
-    }
-  }, { threshold: 0.5 });
-
+  // Pause all videos when section scrolls out of view
   const carousel = document.getElementById('tvCarousel');
-  if (carousel) observer.observe(carousel);
+  if (carousel) {
+    const observer = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) {
+        slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+      }
+    }, { threshold: 0.1 });
+    observer.observe(carousel);
+  }
 })();

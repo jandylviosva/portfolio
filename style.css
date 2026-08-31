@@ -211,17 +211,49 @@ ul{list-style:none}
 
 /* ── TESTIMONIAL ── */
 /* ── VIDEO TESTIMONIAL CAROUSEL ────────────────────────────────────── */
-.tv-carousel{position:relative;max-width:520px;margin:0 auto;overflow:hidden}
-.tv-slide{display:none;text-align:center;animation:tvFade .35s ease}
-.tv-slide.active{display:block}
+/* ── VIDEO TESTIMONIAL CAROUSEL ── */
+/* Desktop: grid up to 5 columns */
+.tv-carousel{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:24px;
+  max-width:1160px;
+  margin:0 auto;
+}
+/* Cap at 5 columns on very wide screens */
+@media(min-width:1200px){
+  .tv-carousel{grid-template-columns:repeat(5,1fr)}
+}
+.tv-slide{display:block;text-align:center}
+
+/* Mobile: horizontal touch-scroll, no arrows */
+@media(max-width:767px){
+  .tv-carousel{
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    gap:16px;
+    padding-bottom:12px;
+    scrollbar-width:none;
+  }
+  .tv-carousel::-webkit-scrollbar{display:none}
+  .tv-slide{
+    flex:0 0 82vw;
+    max-width:320px;
+    scroll-snap-align:start;
+  }
+}
 @keyframes tvFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .testimonial-label{font-size:1rem;font-weight:600;color:var(--blue-dark);margin-bottom:16px;letter-spacing:.05em}
 .testimonial-video{width:100%;border-radius:var(--r-lg);border:2px solid var(--border);box-shadow:0 8px 40px rgba(27,95,170,.1)}
-.tv-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
+.tv-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
 .tv-controls.hidden{display:none}
 .tv-btn{background:var(--blue-dark);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.1rem;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center}
 .tv-btn:hover{background:var(--blue)}
 .tv-dots{display:flex;gap:8px;align-items:center}
+@media(max-width:767px){.tv-controls{display:none}}
 .tv-dot{width:10px;height:10px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background .2s}
 .tv-dot.active{background:var(--blue-dark)}
 
