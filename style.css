@@ -212,31 +212,57 @@ ul{list-style:none}
 /* ── TESTIMONIAL ── */
 /* ── VIDEO TESTIMONIAL CAROUSEL ────────────────────────────────────── */
 /* ── VIDEO TESTIMONIAL CAROUSEL ── */
-.tv-wrapper{position:relative;display:flex;align-items:center;gap:12px}
-.tv-scroll-btn{
-  flex-shrink:0;background:var(--blue-dark);color:#fff;border:none;
-  border-radius:50%;width:40px;height:40px;font-size:1.2rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s,opacity .2s;z-index:2;
+.tv-wrapper{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  justify-content:center;
 }
-.tv-scroll-btn:hover{background:var(--blue)}
-.tv-scroll-btn:disabled{opacity:.3;cursor:default}
-.tv-scroll-btn.hidden{visibility:hidden;pointer-events:none}
+/* Arrow buttons — only visible on desktop when JS unhides them */
+.tv-scroll-btn{
+  flex-shrink:0;
+  background:var(--blue-dark);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:44px;height:44px;
+  font-size:1.3rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 16px rgba(27,95,170,.25);
+  transition:background .2s,transform .15s,opacity .2s;
+  z-index:2;
+}
+.tv-scroll-btn:hover{background:var(--blue);transform:scale(1.08)}
+.tv-scroll-btn:disabled{opacity:.25;cursor:default;transform:none}
+.tv-scroll-btn.hidden{display:none}          /* JS hides when ≤5 slides */
+
+/* The carousel track */
 .tv-carousel{
   display:flex;
   flex-wrap:nowrap;
-  gap:24px;
+  gap:28px;
   overflow:hidden;
-  justify-content:center;
-  flex:1;
+  justify-content:center;    /* centers 1–5 slides */
+  align-items:flex-start;    /* top-align so label height diff doesn't offset */
   min-width:0;
 }
-.tv-slide{flex:0 0 240px;text-align:center}
 
-/* Mobile: touch-scroll, no arrows */
+/* Each slide: fixed width so videos align regardless of label length */
+.tv-slide{
+  flex:0 0 300px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+/* Mobile: hide arrows, enable touch scroll */
 @media(max-width:767px){
-  .tv-wrapper{gap:0}
-  .tv-scroll-btn{display:none}
+  .tv-scroll-btn{display:none !important}
+  .tv-wrapper{gap:0;overflow:hidden}
   .tv-carousel{
     overflow-x:auto;
     -webkit-overflow-scrolling:touch;
@@ -244,22 +270,24 @@ ul{list-style:none}
     justify-content:flex-start;
     scrollbar-width:none;
     padding-bottom:12px;
+    gap:16px;
   }
   .tv-carousel::-webkit-scrollbar{display:none}
-  .tv-slide{flex:0 0 80vw;max-width:300px;scroll-snap-align:start}
+  .tv-slide{
+    flex:0 0 82vw;
+    max-width:320px;
+    scroll-snap-align:center;
+  }
 }
+
 @keyframes tvFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.testimonial-label{font-size:.9rem;font-weight:600;color:var(--blue-dark);margin-bottom:10px;letter-spacing:.05em}
-.testimonial-quote{font-size:.88rem;color:var(--text-muted);font-style:italic;margin-top:12px;line-height:1.6;padding:0 4px}
+.testimonial-label{font-size:.88rem;font-weight:600;color:var(--blue-dark);margin-bottom:10px;letter-spacing:.05em;line-height:1.4;min-height:2.2em;display:flex;align-items:center;justify-content:center}
+.testimonial-quote{font-size:.88rem;color:var(--text-muted);font-style:italic;margin-top:12px;line-height:1.6;padding:0 4px;max-width:280px}
 .testimonial-video{width:100%;border-radius:var(--r-lg);border:2px solid var(--border);box-shadow:0 8px 40px rgba(27,95,170,.1)}
-.tv-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
-.tv-controls.hidden{display:none}
-.tv-btn{background:var(--blue-dark);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:1.1rem;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center}
-.tv-btn:hover{background:var(--blue)}
-.tv-dots{display:flex;gap:8px;align-items:center}
-@media(max-width:767px){.tv-controls{display:none}}
-.tv-dot{width:10px;height:10px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background .2s}
-.tv-dot.active{background:var(--blue-dark)}
+.tv-controls{display:none}   /* old controls no longer used */
+.tv-btn{display:none}
+.tv-dots{display:none}
+.tv-dot{display:none}
 
 /* ── CERTIFICATIONS ── */
 .certs-layout{display:grid;grid-template-columns:400px 385px;gap:24px;align-items:start;justify-content:center}
