@@ -194,60 +194,62 @@ document.addEventListener('keydown', e => {
 // ============================================================
 // VIDEO TESTIMONIAL CAROUSEL
 // ============================================================
+// Desktop: flex row, centered. All slides visible when ≤5 (no arrows).
+//   When >5: overflow hidden, prev/next arrows appear and page by 5.
+// Mobile: touch-scroll only — arrows always hidden via CSS.
 (function () {
-  const slides   = Array.from(document.querySelectorAll('.tv-slide'));
-  const dotsWrap = document.getElementById('tvDots');
-  const controls = document.getElementById('tvControls');
+  const MAX_VISIBLE = 5;
+  const slides  = Array.from(document.querySelectorAll('.tv-slide'));
+  const carousel = document.getElementById('tvCarousel');
   const prevBtn  = document.getElementById('tvPrev');
   const nextBtn  = document.getElementById('tvNext');
-  if (!slides.length) return;
+  if (!slides.length || !carousel) return;
 
-  let current = 0;
+  const isMobile = () => window.innerWidth <= 767;
+  let offset = 0;
 
-  // Build dot buttons
-  slides.forEach((_, i) => {
-    const d = document.createElement('button');
-    d.className = 'tv-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Testimonial ' + (i + 1));
-    d.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(d);
-  });
-
-  // Hide controls when there is only one slide
-  if (slides.length < 2) {
-    controls.classList.add('hidden');
-  }
-
-  function goTo(index) {
-    // Pause current video before switching
-    const currentVid = slides[current].querySelector('video');
-    if (currentVid) currentVid.pause();
-
-    slides[current].classList.remove('active');
-    dotsWrap.children[current].classList.remove('active');
-
-    current = (index + slides.length) % slides.length;
-
-    slides[current].classList.add('active');
-    dotsWrap.children[current].classList.add('active');
-  }
-
-  // Show first slide
-  slides[0].classList.add('active');
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
-  // Autoplay active video when scrolled into view
-  const observer = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      const vid = slides[current].querySelector('video');
-      if (vid) vid.play();
-    } else {
-      slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+  function renderVisible() {
+    if (isMobile()) {
+      // Mobile: all slides visible, CSS handles the scroll
+      slides.forEach(s => { s.style.display = ''; s.style.flex = ''; });
+      return;
     }
-  }, { threshold: 0.5 });
+    const needNav = slides.length > MAX_VISIBLE;
 
-  const carousel = document.getElementById('tvCarousel');
-  if (carousel) observer.observe(carousel);
+    // Show/hide arrows
+    if (needNav) {
+      prevBtn.classList.remove('hidden');
+      nextBtn.classList.remove('hidden');
+      prevBtn.disabled = offset === 0;
+      nextBtn.disabled = offset + MAX_VISIBLE >= slides.length;
+    } else {
+      prevBtn.classList.add('hidden');
+      nextBtn.classList.add('hidden');
+    }
+
+    // Show only the current window of slides
+    slides.forEach((s, i) => {
+      const visible = !needNav || (i >= offset && i < offset + MAX_VISIBLE);
+      s.style.display = visible ? '' : 'none';
+    });
+  }
+
+  function page(dir) {
+    slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+    offset = Math.max(0, Math.min(offset + dir * MAX_VISIBLE, slides.length - MAX_VISIBLE));
+    renderVisible();
+  }
+
+  prevBtn.addEventListener('click', () => page(-1));
+  nextBtn.addEventListener('click', () => page(1));
+  window.addEventListener('resize', () => { offset = 0; renderVisible(); });
+
+  renderVisible();
+
+  // Pause videos when section leaves viewport
+  const observer = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting)
+      slides.forEach(s => { const v = s.querySelector('video'); if (v) v.pause(); });
+  }, { threshold: 0.1 });
+  observer.observe(carousel);
 })();

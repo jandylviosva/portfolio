@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | JV Ecom VA – Shopify Tips & VA Insights</title>
+    <meta
+      name="description"
+      content="Shopify tips, VA insights, and e-commerce guides by Jandyl Vios — Shopify Virtual Assistant from the Philippines. Helping store owners scale faster."
+    />
+    <meta name="author" content="Jandyl Vios" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jvecomva.com/blog/" />
+    <link rel="icon" href="../assets/jvecomva-favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <style>
+      .blog-index-hero {
+        background: var(--navy);
+        color: var(--white);
+        padding: 120px 28px 72px;
+        text-align: center;
+      }
+      .blog-index-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .blog-index-hero h1 em { color: var(--blue-lt); font-style: italic; }
+      .blog-index-hero p {
+        color: rgba(255,255,255,.6);
+        font-size: 1.05rem;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .blog-list {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 72px 28px 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .blog-card {
+        background: var(--bg-muted);
+        border: 1.5px solid var(--border);
+        border-radius: var(--r-lg);
+        padding: 36px;
+        transition: box-shadow .2s, transform .15s;
+      }
+      .blog-card:hover {
+        box-shadow: 0 8px 32px rgba(41,121,212,.12);
+        transform: translateY(-2px);
+      }
+      .blog-card .tag {
+        display: inline-block;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: var(--blue);
+        border: 1.5px solid var(--blue);
+        border-radius: 100px;
+        padding: 3px 12px;
+        margin-bottom: 16px;
+      }
+      .blog-card h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.3rem, 3vw, 1.7rem);
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .blog-card p {
+        font-size: .98rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+      .blog-card .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: .92rem;
+        font-weight: 600;
+        color: var(--blue);
+        transition: gap .2s;
+      }
+      .blog-card .read-more:hover { gap: 10px; }
+      .blog-card .meta {
+        font-size: .82rem;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav id="navbar">
+      <a href="../" class="nav-logo">
+        <img src="../assets/mylogo.png" alt="JV Ecom VA" class="nav-logo-img" />
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../#about-me">About Me</a></li>
+        <li><a href="../#services-offered">Services</a></li>
+        <li><a href="../#sample-works">Samples</a></li>
+        <li><a href="../#contact">Contact</a></li>
+        <li>
+          <a href="" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jvecomva/30min'});return false;">
+            Hire Me
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="blog-index-hero">
+      <div class="section-label light">Blog</div>
+      <h1>Shopify Tips &amp; <em>VA Insights</em></h1>
+      <p>Practical guides for store owners who want to scale without burning out.</p>
+    </section>
+
+    <div class="blog-list">
+      <div class="blog-card">
+        <div class="tag">Shopify VA</div>
+        <div class="meta">By Jandyl Vios · August 2026</div>
+        <h2>What a Shopify VA Can Do for Your Store</h2>
+        <p>
+          Struggling to keep up with your Shopify store? Learn exactly what a Shopify Virtual Assistant does, which tasks to delegate first, and how hiring a VA from the Philippines can save you 20–40 hours a week.
+        </p>
+        <a href="what-a-shopify-va-can-do-for-your-store.html" class="read-more">
+          Read the full post →
+        </a>
+      </div>
+      <!-- Future posts will go here -->
+    </div>
+
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="../">
+            <img src="../assets/mylogo2.png" alt="JV Ecom VA" class="footer-logo-img" />
+          </a>
+          <p><em>Seamless Support, Infinite Possibilities</em></p>
+        </div>
+        <div class="footer-links">
+          <a href="../#about-me">About</a>
+          <a href="../#services-offered">Services</a>
+          <a href="../#sample-works">Samples</a>
+          <a href="../#contact">Contact</a>
+          <a href="./">Blog</a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        © 2026 Jandyl Vios · JV Ecom VA · All Rights Reserved
+      </p>
+    </footer>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      if (hamburger) {
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          hamburger.classList.toggle('open');
+        });
+      }
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      });
+    </script>
+  </body>
+</html>
