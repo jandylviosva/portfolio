@@ -456,7 +456,7 @@ ul{list-style:none}
 @media (max-width:760px){.post-grid{grid-template-columns:1fr}.post-card{padding:26px}}
 
 /* Store analyzer banner under the hero */
-.analyzer-band{padding:0 28px;margin-top:-8px;position:relative;z-index:2}
+.analyzer-band{padding:0 28px 12px;margin-top:-1px;position:relative;z-index:2;background:linear-gradient(90deg,#eaf4fd 0%,#ebf5fc 55%,#d4eaf8 100%)}
 .analyzer-card{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px;background:var(--white);border:1.5px solid var(--border);border-left:5px solid var(--blue);border-radius:var(--r-lg);padding:28px 32px;box-shadow:0 10px 36px rgba(41,121,212,.12);transform:translateY(-28px)}
 .analyzer-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);border:1.5px solid var(--blue);border-radius:100px;padding:2px 11px;margin-bottom:10px}
 .analyzer-text h2{font-family:var(--font-display);font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.25}
