@@ -443,8 +443,6 @@ ul{list-style:none}
 
 .nav-badge{display:inline-block;margin-left:4px;padding:1px 7px;border-radius:50px;background:var(--blue);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
 
-.btn-analyzer{background:var(--navy);color:#fff;border-color:var(--navy)}
-.btn-analyzer:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-2px);box-shadow:0 6px 22px rgba(41,121,212,.35)}
 /* Blog cards: two per row, one on mobile, all the same height */
 .post-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .post-card{display:flex;flex-direction:column;height:400px;background:var(--bg-muted);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:32px;transition:box-shadow .2s,transform .15s}
@@ -456,3 +454,14 @@ ul{list-style:none}
 .post-link{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:.92rem;font-weight:600;color:var(--blue);transition:gap .2s}
 .post-link:hover{gap:10px}
 @media (max-width:760px){.post-grid{grid-template-columns:1fr}.post-card{padding:26px}}
+
+/* Store analyzer banner under the hero */
+.analyzer-band{padding:0 28px;margin-top:-8px;position:relative;z-index:2}
+.analyzer-card{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px;background:var(--white);border:1.5px solid var(--border);border-left:5px solid var(--blue);border-radius:var(--r-lg);padding:28px 32px;box-shadow:0 10px 36px rgba(41,121,212,.12);transform:translateY(-28px)}
+.analyzer-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);border:1.5px solid var(--blue);border-radius:100px;padding:2px 11px;margin-bottom:10px}
+.analyzer-text h2{font-family:var(--font-display);font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.25}
+.analyzer-text p{font-size:.95rem;color:var(--text-muted);line-height:1.6;max-width:560px}
+.analyzer-actions{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0}
+.analyzer-more{font-size:.88rem;font-weight:600;color:var(--blue)}
+.analyzer-more:hover{text-decoration:underline}
+@media (max-width:760px){.analyzer-band{padding:0 16px}.analyzer-card{flex-direction:column;align-items:flex-start;padding:24px 22px;transform:translateY(-20px)}.analyzer-actions{align-items:flex-start;width:100%}.analyzer-actions .btn{width:100%}}
