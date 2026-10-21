@@ -330,7 +330,7 @@ ul{list-style:none}
 #footer{background:var(--navy);color:rgba(255,255,255,.45);padding:48px 28px 24px;border-top:3px solid var(--blue)}
 .footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:24px}
 .footer-brand{display:flex;flex-direction:column;gap:10px}
-.footer-logo-img{height:52px;width:auto}
+.footer-logo-img{height:72px;width:auto}
 .footer-brand p{font-size:.88rem;color:rgba(255,255,255,.35);font-style:italic}
 .footer-links,.footer-social{display:flex;flex-direction:column;gap:10px}
 .footer-links a,.footer-social a{font-size:.88rem;color:rgba(255,255,255,.4);transition:color .2s}
