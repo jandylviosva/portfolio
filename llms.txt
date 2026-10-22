@@ -1,0 +1,29 @@
+# JV Ecom VA (Jandyl Vios)
+
+> JV Ecom VA is a Shopify virtual assistant service run by Jandyl Vios from Valencia City, Bukidnon, Philippines. It helps Shopify store owners with store setup, product listing and product page (PDP) building, theme customization and Liquid editing, app integrations, store localization, order processing and customer support. Clients are in the United States, Australia, Europe and other markets, working remotely.
+
+## Services
+- Shopify store setup: domain connection, theme installation, homepage, navigation and basic SEO.
+- Product listing and PDP building: product pages that meet brand standards and support conversion.
+- Theme customization: Shopify theme edits with the Theme Editor and Liquid code.
+- App integrations: setup and configuration of Shopify apps (reviews, email, subscriptions, sizing, shipping and more).
+- Store localization: translating and adapting store content for international markets.
+- Order processing and fulfillment: order management, inventory tracking, fulfillment coordination.
+- Customer chat and email support.
+
+## Free tool
+- [Free Shopify Store Analyzer](https://analyze.jvecomva.com/): scans any Shopify storefront in about 30 seconds and returns a score out of 100 with the top fixes across speed, homepage, product page, cart and checkout setup, email sign-ups, trust and policies, search basics and tracking. The full report is emailed as a PDF. It only sees public pages, so it cannot see sales or conversion data.
+- [About the Store Analyzer](https://jvecomva.com/blog/free-shopify-store-analyzer.html)
+
+## Guides
+- [What a Shopify VA Can Do for Your Store](https://jvecomva.com/blog/what-a-shopify-va-can-do-for-your-store.html)
+
+## Tools used
+Shopify Admin, Klaviyo, Judge.me, Loox, Recharge, Gorgias, Printful, Printify, Kiwi Sizing, Canva, Photoshop, ClickUp, Trello, Slack, Google Workspace, Xero, ChatGPT, Gemini, Claude.
+
+## Contact
+- Website: https://jvecomva.com/
+- Book a free 30-minute call: https://calendly.com/jvecomva/30min
+- Email: jandylviosva@gmail.com
+- WhatsApp: +63 956 013 7170
+- LinkedIn: https://www.linkedin.com/in/jandylvios/
