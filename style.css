@@ -148,8 +148,8 @@ ul{list-style:none}
 /* ── TOOLS TICKER ── */
 .tools-ticker-wrap{overflow:hidden;width:100%;padding:8px 0;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 5%,#000 95%,transparent 100%)}
 .tools-ticker{display:flex;gap:14px;width:max-content}
-.ticker-forward{animation:ticker-fwd 35s linear infinite}
-.ticker-reverse{animation:ticker-rev 35s linear infinite}
+.ticker-forward{animation:ticker-fwd 50s linear infinite}
+.ticker-reverse{animation:ticker-rev 46s linear infinite}
 .tools-ticker:hover{animation-play-state:paused}
 @keyframes ticker-fwd{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes ticker-rev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
@@ -465,3 +465,6 @@ ul{list-style:none}
 .analyzer-more{font-size:.88rem;font-weight:600;color:var(--blue)}
 .analyzer-more:hover{text-decoration:underline}
 @media (max-width:760px){.analyzer-band{padding:0 16px}.analyzer-card{flex-direction:column;align-items:flex-start;padding:24px 22px;transform:translateY(-20px)}.analyzer-actions{align-items:flex-start;width:100%}.analyzer-actions .btn{width:100%}}
+
+.tool-mono{height:26px;width:26px;flex-shrink:0;border-radius:50%;background:var(--blue-pale);color:var(--blue);font-weight:700;font-size:.8rem;display:inline-grid;place-items:center;transition:all .2s}
+.tool-chip:hover .tool-mono{background:#fff;color:var(--blue)}
