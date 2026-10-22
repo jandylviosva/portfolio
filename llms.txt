@@ -19,7 +19,7 @@
 - [What a Shopify VA Can Do for Your Store](https://jvecomva.com/blog/what-a-shopify-va-can-do-for-your-store.html)
 
 ## Tools used
-Shopify Admin, Klaviyo, Judge.me, Loox, Recharge, Gorgias, Printful, Printify, Kiwi Sizing, Simprosys Google Shopping Feed, Measura (sell by weight), Kaching, Winehub, Aramex, Meta Ads, Google Search Console, Google Ads, Google Merchant Center, Canva, Photoshop, ClickUp, Trello, Slack, Google Workspace, Xero, ChatGPT, Gemini, Claude.
+Shopify Admin, Klaviyo, Judge.me, Loox, Recharge, Gorgias, Printful, Printify, Kiwi Sizing, Simprosys Google Shopping Feed, Measura (sell by weight), Kaching, Winehub, Aramex, Meta Ads, Google Search Console, Google Ads, Google Merchant Center, Microsoft Clarity, Canva, Photoshop, ClickUp, Trello, Slack, Google Workspace, Xero, ChatGPT, Gemini, Claude.
 
 ## Contact
 - Website: https://jvecomva.com/
