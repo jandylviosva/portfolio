@@ -27,3 +27,23 @@ Shopify Admin, Klaviyo, Judge.me, Loox, Recharge, Gorgias, Printful, Printify, K
 - Email: jandylviosva@gmail.com
 - WhatsApp: +63 956 013 7170
 - LinkedIn: https://www.linkedin.com/in/jandylvios/
+
+## FAQ
+- Q: What does a Shopify virtual assistant do?
+  A: A Shopify virtual assistant handles the day-to-day work of running your store: product listing and product page building, theme edits, app setup, order processing, inventory, and customer chat and email support. I do this remotely so you can focus on growing the business.
+- Q: Can you edit my Shopify theme and Liquid code?
+  A: Yes. I do theme customization using the Shopify Theme Editor and Liquid code edits, including homepage layouts, product page sections and small custom features.
+- Q: Which Shopify apps can you set up?
+  A: I set up and configure apps for reviews, email and SMS, subscriptions, sizing, shipping, bundles, sell-by-weight and Google Shopping feeds. Examples I use include Klaviyo, Judge.me, Loox, Recharge, Gorgias, Kiwi Sizing, Kaching, Measura and Simprosys.
+- Q: How much does it cost to hire you?
+  A: Shopify store setup starts at $899, or you can hire me at an hourly rate. For ongoing store management, a monthly retainer is available. Book a free 30-minute call and I will quote based on what you need.
+- Q: Do you work with stores outside the Philippines?
+  A: Yes. I am based in Valencia City, Bukidnon, Philippines and work remotely with store owners in the United States, Australia, Europe and other markets.
+- Q: Can you localize my store for other countries?
+  A: Yes. Store localization means translating and adapting your content, product pages and store settings for international markets.
+- Q: Can you help with Google Shopping, Merchant Center and Meta Ads setup?
+  A: I work with Google Merchant Center, Google Ads, Google Search Console, Meta Ads and Microsoft Clarity, and can connect your product feed and tracking tools to your Shopify store.
+- Q: Is there a free way to check my store first?
+  A: Yes. The free Shopify Store Analyzer at analyze.jvecomva.com scans your store in about 30 seconds and gives you a score out of 100 with the top fixes. It only reads public pages.
+- Q: How do I get started?
+  A: Book a free 30-minute discovery call, tell me about your store and what you need, and I will recommend the best next step.
