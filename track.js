@@ -19,7 +19,18 @@
     })(window, document, "clarity", "script", CLARITY_ID);
   }
 
+  // First-party log read by the admin dashboard ("Portfolio traffic" tab). No cookies, no IP stored.
+  var COLLECT = "https://dashboard.jvecomva.com/api/pt";
+  function log(name, extra) {
+    try {
+      var body = JSON.stringify({ name: name, path: location.pathname, source: extra && extra.source, type: extra && extra.type, extra: extra && extra.extra });
+      if (navigator.sendBeacon) navigator.sendBeacon(COLLECT, new Blob([body], { type: "text/plain" }));
+      else fetch(COLLECT, { method: "POST", body: body, keepalive: true, mode: "no-cors" });
+    } catch (e) {}
+  }
+
   function send(name, props) {
+    log(name, name === "visit_source" ? props : { extra: props });
     try { window.va("event", { name: name, data: props || {} }); } catch (e) {}
     try { if (window.clarity) window.clarity("event", name); } catch (e) {}
   }
@@ -59,6 +70,8 @@
       }
     }
   } catch (e) {}
+
+  log("view");
 
   // Click tracking on the main buttons and links.
   function label(el) { return (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 50); }
