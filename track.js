@@ -1,7 +1,7 @@
 /* Visitor analytics: Vercel Web Analytics + Microsoft Clarity, plus click and source tracking.
    No personal data is collected here. Set CLARITY_ID below once the Clarity project exists. */
 (function () {
-  var CLARITY_ID = ""; // e.g. "abcd1234ef" from Clarity > Settings > Overview
+  var CLARITY_ID = "z218tzmsma";
 
   // Vercel Web Analytics (cookieless). Needs Analytics enabled in the Vercel project.
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
